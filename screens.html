@@ -1,0 +1,505 @@
+<!doctype html>
+
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" itemscope itemtype="http://schema.org/Product"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/b/378 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Gumby - A Flexible, Responsive CSS Framework - Powered by SASS</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="humans.txt">
+
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+
+    <!-- Facebook Metadata /-->
+    <meta property="fb:page_id" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content=""/>
+    <meta property="og:title" content=""/>
+
+    <!-- Google+ Metadata /-->
+    <meta itemprop="name" content="">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    <!-- We highly recommend you use SASS and write your custom styles in sass/_custom.scss.
+       However, there is a blank style.css in the css directory should you prefer -->
+    <link rel="stylesheet" href="css/gumby.css">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+    <script src="js/libs/modernizr-2.0.6.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+
+
+</head>
+
+<style>
+	html, body {
+		background: #fefefe;
+	}
+
+	.column, .columns, .tiles > li {
+		background: #ddd;
+        border: 1px solid #d0d0d0;
+		-webkit-transition-duration: .3s;
+		-moz-transition-duration: .3s;
+		-o-transition-duration: .3s;
+		-ms-transition-duration: .3s;
+		transition-duration: .3s;
+	}
+
+	/*.column:hover, .columns:hover {
+		background: #efefef;
+		cursor: pointer;
+		-webkit-transition-duration: .3s;
+		-moz-transition-duration: .3s;
+		-o-transition-duration: .3s;
+		-ms-transition-duration: .3s;
+		transition-duration: .3s;
+	}*/
+
+	.row {
+		margin-bottom: 25px;
+		text-align: center;
+	}
+
+	h1, h2 {
+		font: bold italic 220px georgia, times new roman, serif;
+		color: #555;
+		letter-spacing: -.09em;
+		-webkit-transition-duration: 1s;
+	}
+
+	h2  {
+		font-size: 21px;
+		font-weight: normal;
+		line-height: 1.6;
+	}
+
+	p {
+		font-size: 16px;
+		line-height: 60px;
+		margin-bottom: 0;
+		color: #555;
+
+		-webkit-transition-duration: .2s;
+		-moz-transition-duration: .2s;
+		-o-transition-duration: .2s;
+		-ms-transition-duration: .2s;
+		transition-duration: .2s;
+	}
+
+	/*.column:hover p, .columns:hover p {
+		font-size: 25px;
+		font-weight: bold;
+
+		-webkit-transition-duration: .2s;
+		-moz-transition-duration: .2s;
+		-o-transition-duration: .2s;
+		-ms-transition-duration: .2s;
+		transition-duration: .2s;
+	}*/
+
+	.head, .head:hover {
+		box-shadow: none;
+		margin-top: 30px;
+	}
+
+	.head span {
+		font-weight: bold;
+		color: #353535;
+	}
+
+	.head span span {
+		font-size: 32px;
+		font-weight: bold !important;
+	}
+
+	a {
+		color: #d04526;
+	}
+
+	a:hover {
+		text-decoration:underline;
+	}
+
+
+    .rating li.active
+    {
+        background: #ff9900;
+    }
+
+	@media only screen and (max-width: 767px) {
+
+		h1 {
+			font: bold italic 100px georgia, times new roman, serif;
+			-webkit-transition-duration: .5s;
+		}
+
+	}
+
+    #template-homepage {
+        padding-bottom: 42px;
+    }
+
+    #template-homepage-slideshow-wrapper {
+        position: relative;
+        top: -35px;
+        width: 100%;
+        min-width: 986px;
+        overflow: hidden;
+        text-align: left; /* Since this can't be held inside a .wrap, we have to reset the text-alignment ourselves. */
+    }
+
+    #template-homepage-slideshow {
+        position: relative;
+        margin: auto;
+        height: 602px;
+        width: 480px;
+        overflow: hidden;
+    }
+    #template-homepage-slideshow .stage {
+        position: relative;
+    }
+    #template-homepage-slideshow .stage .viewport {
+        position: absolute;
+        left: 0;
+    }
+    #template-homepage-slideshow .stage .viewport .canvas {
+        float: left;
+    }
+
+    #template-homepage-slideshow .non-stage-tab {
+        right: 91px;
+        bottom: 0;
+        border: 1px solid #666;
+        border-bottom-width: 0;
+        -webkit-border-radius: 6px 6px 0 0;
+        -moz-border-radius: 6px 6px 0 0;
+        border-radius: 6px 6px 0 0;
+        -moz-background-clip: padding;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        height: 25px;
+        width: 70px;
+        background: #666 url(../img/slideshow/timeline-open-arrow.png) no-repeat center center;
+        cursor: pointer;
+        behavior: url(/assets/js/PIE.php);
+    }
+
+    #template-homepage-slideshow .non-stage {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 1076px;
+    }
+
+    #template-homepage-slideshow .timeline {
+        background-color: #666;
+    }
+    #template-homepage-slideshow .timeline-tracker {
+        height: 5px;
+        width: 0;
+        background-color: #00a3e0;
+    }
+
+    #template-homepage-slideshow .controls {
+        padding: 2px 0;
+        background-color: #0d0c0b;
+    }
+    #template-homepage-slideshow .now-showing {
+        position: absolute;
+        left: 0;
+        z-index: 100;
+        background-image: url(../img/slideshow/now-showing.png);
+        height: 50px;
+        width: 126px;
+    }
+
+    #template-homepage-slideshow .filmstrip {
+        float: left;
+        margin-left: 106px;
+        width: 868px;
+    }
+    #template-homepage-slideshow .filmstrip .frame {
+        position: relative;
+        float: left;
+        margin: 0 3px;
+        cursor: pointer;
+    }
+    #template-homepage-slideshow .filmstrip .frame img {
+        opacity: 0.5;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+        filter: alpha(opacity=50);
+    }
+    #template-homepage-slideshow .filmstrip .frame:hover img,
+    #template-homepage-slideshow .filmstrip .frame.active img {
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        filter: alpha(opacity=100);
+    }
+    #template-homepage-slideshow .filmstrip .frame .overlay {
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 2px solid #00a3e0;
+        height: 46px;
+        width: 114px;
+    }
+    #template-homepage-slideshow .filmstrip .frame:hover .overlay {
+        visibility: visible;
+    }
+
+    #template-homepage-slideshow .play-button {
+        float: left;
+        height: 50px;
+        width: 50px;
+        background: url(../img/slideshow/play-button.png) no-repeat 0 0;
+        cursor: pointer;
+    }
+    #template-homepage-slideshow.playbackstate-0 .play-button {
+        background-position: 0 0;
+    }
+    #template-homepage-slideshow.playbackstate-0 .play-button:hover {
+        background-position: 0 -50px;
+    }
+    #template-homepage-slideshow.playbackstate-1 .play-button {
+        background-position: 0 -100px;
+    }
+    #template-homepage-slideshow.playbackstate-1 .play-button:hover {
+        background-position: 0 -150px;
+    }
+
+    #template-homepage-modules .module {
+        float: left;
+        margin-left: 6px;
+        width: 230px;
+        height: 354px;
+    }
+        /* TODO: Figure out why IE7/8 don't allow for .module:first-child in this instance */
+    #template-homepage-modules .module.first {
+        margin-left: 0;
+    }
+    #template-homepage-modules .module .body {
+        margin: 6px;
+        height: 342px;
+    }
+
+    #template-homepage-modules .module.standard h3,
+    #template-homepage-modules .module.standard p {
+        margin: 0 14px;
+    }
+    #template-homepage-modules .module.standard h3 {
+        margin-top: 18px;
+        font-family: ITCAvantGardeGothicStdMedium;
+        font-size: 116.6666667%;
+    }
+    #template-homepage-modules .module.standard h3 a {
+        color: #3f3f3f;
+    }
+    #template-homepage-modules .module.standard h3 span {
+        text-transform: uppercase;
+    }
+    #template-homepage-modules .module.standard .byline,
+    #template-homepage-modules .module.standard .timing {
+        margin-top: 7px;
+        line-height: 1em;
+    }
+    #template-homepage-modules .module.standard .byline {
+        font-family: ITCAvantGardeGothicStdMedium;
+    }
+    #template-homepage-modules .module.standard .timing {
+        font-size: 83.3333333%;
+    }
+    #template-homepage-modules .module.standard .timing.urgent {
+        color: #ef3340;
+    }
+    #template-homepage-modules .module.standard .image,
+    #template-homepage-modules .module.standard .cta {
+        margin: 0 6px;
+    }
+    #template-homepage-modules .module.standard .image {
+        position: absolute;
+        bottom: 36px;
+    }
+    #template-homepage-modules .module.standard .cta {
+        position: absolute;
+        bottom: 12px;
+        font-family: ITCAvantGardeGothicStdDemi;
+        text-transform: uppercase;
+        font-size: 91.6666667%;
+    }
+
+    #template-homepage-modules .module.the-hotness .body {
+        background-image: url(../img/homepage/modules/the-hotness-bg.jpg);
+    }
+    #template-homepage-modules .module.the-hotness h3 {
+        margin: 0;
+        padding: 15px 0;
+        height: 41px;
+        background-image: url(../img/homepage/modules/the-hotness.png);
+        background-position: center center;
+    }
+    #template-homepage-modules .module.the-hotness ol {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    #template-homepage-modules .module.the-hotness ol li {
+        padding: 10px 20px;
+        background-repeat: no-repeat;
+    }
+    #template-homepage-modules .module.the-hotness ol li.with-background {
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        height: 68px;
+    }
+    #template-homepage-modules .module.the-hotness ol .tag {
+        display: inline-block;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        -moz-background-clip: padding;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        padding: 3px 3px 0;
+        line-height: 1em;
+        background-color: #f22942;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 83.3333333%;
+        behavior: url(/assets/js/PIE.php);
+    }
+    #template-homepage-modules .module.the-hotness ol h4 {
+        margin: 0;
+        font-size: 91.6666667%;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    #template-homepage-modules .module.the-hotness ol h4 a {
+        color: #3f3f3f;
+    }
+    #template-homepage-modules .module.the-hotness ol p {
+        margin: 0;
+    }
+
+    .ui-slider-track, .ui-slider-switch {
+        margin: 0;
+
+    }
+
+    .timer {
+        position:relative;
+        font-size: 50px;
+        width:1em;
+        height:1em;
+        float: left;
+    }
+    .timer > .percent {
+        position: absolute;
+        top: 1.05em;
+        left: 0;
+        width: 3.33em;
+        font-size: 0.3em;
+        text-align:center;
+    }
+    .timer > #slice {
+        position:absolute;
+        width:1em;
+        height:1em;
+        clip:rect(0px,1em,1em,0.4em);
+    }
+    .timer > #slice.gt50 {
+        clip:rect(auto, auto, auto, auto);
+    }
+    .timer > #slice > .pie {
+        border: 0.1em solid #77ccaa;
+        position:absolute;
+        width:0.8em; /* 1 - (2 * border width) */
+        height:0.8em; /* 1 - (2 * border width) */
+        clip:rect(0em,0.4em,1em,0em);
+        -moz-border-radius:0.5em;
+        -webkit-border-radius:0.5em;
+        border-radius:0.5em;
+    }
+    .timer > #slice > .pie.fill {
+        -moz-transform:rotate(180deg) !important;
+        -webkit-transform:rotate(180deg) !important;
+        -o-transform:rotate(180deg) !important;
+        transform:rotate(180deg) !important;
+    }
+    .timer.fill > .percent {
+        display: none;
+    }
+    .timer.fill > #slice > .pie {
+        border: transparent;
+        background-color: #c0c0c0;
+        width:1em;
+        height:1em;
+    }
+
+    #slider-1
+    {
+        display: none;
+    }
+
+
+    #container
+{
+    margin: 30px;
+}
+
+
+</style>
+
+<div id="container">
+    <div id="template-homepage-slideshow-wrapper">
+        <div id="template-homepage-slideshow"></div>
+    </div>
+</div>
+
+<body>
+
+
+  -->
+<script src="js/libs/extend.js"></script>
+<script src="js/tippie/tippie.js"></script>
+<script src="js/tippie/events.js"></script>
+<script src="js/tippie/screen.js"></script>
+<script src="js/tippie/scene.js"></script>
+<script src="js/tippie/htmlscene.js"></script>
+
+<script>
+    var slideshow;
+    //screen support
+    jQuery(document).ready(function () {
+        slideshow = new Tippie.Slideshow ({
+            container: '#template-homepage-slideshow',
+            scenes: [
+                new Tippie.Slideshow.HtmlContentScene({content: '<div class="container"> <div id="test"></div> <div class="row"> <div class="twelve columns"> <div class="row"> <div class="centered ten columns"> <input id="meal-total" type="number" step="0.01" min="0" > <ul class="two_up tiles"> <li id="tip-amount">Two Up</li> <li id="tip-split">Two Up</li> </ul> <p id="bill-total">$0.00</p> </div> </div> </div> </div> <div class="row"> <div class="twelve columns"> <ul class="five_up tiles rating"> <li data-percent="10">Four Up</li> <li data-percent="40">Four Up</li> <li data-percent="60">Four Up</li> <li data-percent="80">Four Up</li> <li data-percent="100">Four Up</li> </ul> </div> </div> <div class="row"> <div class="twelve columns"> <div class="two columns"> icon </div> <div class="eight columns"> <input type="range" step="0.01" name="slider-1" id="slider-1" min="0" max="100" value="0.0"> </div> <div class="two columns" ><div class="timer"></div> </div> </div> </div> <div class="row"> <div class="twelve columns"> <div class="two columns"> icon </div> <div class="eight columns"> <input id="divide-meal" type="number" step="1" min="1" value="1" > </div> <div class="two columns">icon</div> </div> </div> <div class="row"> <div class="four columns"> <div class="five columns"> 4 </div> <div class="seven columns"> 4 </div> </div> <div class="four columns"> <div class="five columns"> 4 </div> <div class="seven columns"> 4 </div> </div> <div class="four columns"> <div class="five columns"> 4 </div> <div class="seven columns"> 4 </div> </div> </div> </div>', duration: 2000, thumbnail: 'http://placekitten.com/g/100/50'}),
+                new Tippie.Slideshow.HtmlContentScene({content: '<div class="container"> <div class="row"> <div class="twelve columns"> <p>About Us</p> <p>Welcome Welcome Welcome Welcome Welcome Welcome Welcome Welcome Welcome</p> </div> <div class="row"> <div class="four columns"> <div class="five columns"> 4 </div> <div class="seven columns"> 4 </div> </div> <div class="four columns"> <div class="five columns"> 4 </div> <div class="seven columns"> 4 </div> </div> <div class="four columns"> <div class="five columns"> 4 </div> <div class="seven columns"> 4 </div> </div> </div> </div>', duration: 2000, thumbnail: 'http://placekitten.com/g/100/50'})
+
+
+
+            ]
+        });
+
+      //  slideshow.SetScreen(3);
+    });
+
+</script>
+
+
+  <script src="js/tippie/ProgressCircle.js"></script>
+  <script src="js/tippie/app.js"></script>
+  <script src="js/tippie/init.js"></script>
+  </body>
+</html>
