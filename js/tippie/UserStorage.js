@@ -1,6 +1,6 @@
 ;(function ($) {
     /**
-     * class Tippie.UserStorage
+     * class Tippie.UserStorage Saves/Loads from localStorage.
      **/
     Tippie.UserStorage = function (config) {
         config = (config = config || {});
