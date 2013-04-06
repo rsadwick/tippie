@@ -18,7 +18,8 @@
         InitControls: function () {
 
             var _scope = this;
-
+            this.settings.CreateStorage();
+            this.settings.LoadTipView();
             this.Canvas.find('#slider-val').append(this.Canvas.find('#slider-1'));
             this.Canvas.find('#slider-1').change(function() {
                 _scope.Events.Trigger(Tippie.Application.EVENT.SLIDER_CHANGED, $(this).slider().val());
@@ -54,8 +55,7 @@
                 currentTip.tip =  this.Canvas.find('#slider-1').slider().val() - 0;
                 currentTip.divide = this.Canvas.find('#divide-meal').val();
 
-               // console.log(currentTip);
-                _scope.settings.Save(currentTip);
+                _scope.settings.SaveTip(currentTip);
 
             }, this);
 
@@ -64,6 +64,10 @@
                 Tippie.Instance().CalculateTip();
             }, this);
 
+            //Tip Items:
+            this.Canvas.find('.tip-item').live('click', function(e){
+                console.log($(this).data());
+            });
             //divisions:
 
             Tippie.Instance().Events.On(Tippie.Application.EVENT.DIVISION_CHANGED, function (e) {
