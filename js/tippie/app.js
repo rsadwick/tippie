@@ -6,10 +6,12 @@
             element: $(canvas).find('.timer'),
             max: 100
         });
+        this.settings = new Tippie.UserStorage({
+            key : 'tippie'
+        });
     };
     Tippie.Application.prototype =
     {
-
         Canvas: null,
         Events: null,
 
@@ -31,6 +33,7 @@
                 _scope.Events.Trigger(Tippie.Application.EVENT.SLIDER_CHANGED, _scope.Canvas.find('#slider-1').slider().val());
             });
 
+            //Divide the bill up/down btns
             this.Canvas.find('#up').on('click', function(e){
                 _scope.Events.Trigger(Tippie.Application.EVENT.DIVISION_CHANGED, e);
             });
@@ -38,6 +41,23 @@
             this.Canvas.find('#down').on('click', function(e){
                 _scope.Events.Trigger(Tippie.Application.EVENT.DIVISION_CHANGED, e);
             });
+
+            //Save state:
+            this.Canvas.find('#saveBtn').on('click', function(e){
+                _scope.Events.Trigger(Tippie.Application.EVENT.TIP_SAVED, e);
+            });
+
+            Tippie.Instance().Events.On(Tippie.Application.EVENT.TIP_SAVED, function(e){
+                var currentTip = {};
+                currentTip.name = 'test';
+                currentTip.total = this.Canvas.find('#meal-total').val();
+                currentTip.tip =  this.Canvas.find('#slider-1').slider().val() - 0;
+                currentTip.divide = this.Canvas.find('#divide-meal').val();
+
+               // console.log(currentTip);
+                _scope.settings.Save(currentTip);
+
+            }, this);
 
             Tippie.Instance().Events.On(Tippie.Application.EVENT.SLIDER_CHANGED, function (value) {
                 Tippie.Instance().UpdateTip(value);
@@ -57,7 +77,8 @@
 
                     case 'down':
                     {
-                        divide.val(divide.val() - 1);
+                        if(divide.val() > 1)
+                            divide.val(divide.val() - 1);
                         break;
                     }
                 }
@@ -88,10 +109,12 @@
             var tippie = this.Canvas.find('#slider-1').slider().val() - 0;
             var total = Math.round(((tippie / 100) * bill) * 100) / 100;
 
-            this.Canvas.find('#tip-amount').text('$' + parseFloat(total).toFixed(2));
-            this.Canvas.find('#bill-total').text('$' + parseFloat(bill + total).toFixed(2));
-            this.Canvas.find('#tip-split').text('$' + parseFloat((bill + total) / this.Canvas.find('#divide-meal').val()).toFixed(2));
-
+            var tipCurrency = parseFloat(total).toFixed(2);
+            var totalCurrency = parseFloat(bill + total).toFixed(2);
+            var divideCurrency = parseFloat((bill + total) / this.Canvas.find('#divide-meal').val()).toFixed(2);
+            this.Canvas.find('#tip-amount').text('$' + tipCurrency);
+            this.Canvas.find('#bill-total').text('$' + totalCurrency);
+            this.Canvas.find('#tip-split').text('$' + divideCurrency);
         }
     };
 
@@ -99,6 +122,7 @@
     {
         SLIDER_CHANGED: 'slider:changed',
         RATING_CHANGED: 'rating:changed',
-        DIVISION_CHANGED: 'division:changed'
+        DIVISION_CHANGED: 'division:changed',
+        TIP_SAVED: 'tip:saved'
     };
 })(jQuery);
