@@ -9,13 +9,14 @@
     </list>
     <ignored path="tippie.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/app.js" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1365279547226" ignored="false" />
-    <file path="/demo.html" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1365276499163" ignored="false" />
+    <file path="/app.js" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1365354363863" ignored="false" />
+    <file path="/demo.html" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1365354057546" ignored="false" />
     <file path="/ProgressCircle.js" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1364362379201" ignored="false" />
     <file path="/init.js" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1364949729742" ignored="false" />
-    <file path="/Dummy.txt" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1365268165118" ignored="false" />
+    <file path="/Dummy.txt" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1365296401407" ignored="false" />
     <file path="/README.md" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1365205882162" ignored="false" />
-    <file path="/UserStorage.js" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1365279289753" ignored="false" />
+    <file path="/UserStorage.js" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1365350638944" ignored="false" />
+    <file path="/test.html" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1365352649367" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +36,7 @@
       <file leaf-file-name="demo.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="270" column="10" selection-start="7319" selection-end="7319" vertical-scroll-proportion="-7.12">
+            <state line="322" column="6" selection-start="8373" selection-end="8373" vertical-scroll-proportion="-101.01961">
               <folding />
             </state>
           </provider>
@@ -44,7 +45,7 @@
       <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/tippie/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="48" selection-start="2607" selection-end="2607" vertical-scroll-proportion="0.26277372">
+            <state line="46" column="35" selection-start="1548" selection-end="1548" vertical-scroll-proportion="0.44117647">
               <folding />
             </state>
           </provider>
@@ -53,7 +54,7 @@
       <file leaf-file-name="UserStorage.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/tippie/UserStorage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="38" selection-start="2305" selection-end="2305" vertical-scroll-proportion="-6.4727273">
+            <state line="10" column="0" selection-start="305" selection-end="305" vertical-scroll-proportion="-6.1538463">
               <folding />
             </state>
           </provider>
@@ -62,7 +63,7 @@
       <file leaf-file-name="init.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/tippie/init.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="38" selection-start="139" selection-end="151" vertical-scroll-proportion="0.0">
+            <state line="15" column="11" selection-start="562" selection-end="562" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -99,17 +100,18 @@
         <option value="$PROJECT_DIR$/js/tippie/ProgressCircle.js" />
         <option value="$PROJECT_DIR$/js/tippie/init.js" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/demo.html" />
         <option value="$PROJECT_DIR$/js/tippie/UserStorage.js" />
+        <option value="$PROJECT_DIR$/test.html" />
+        <option value="$PROJECT_DIR$/demo.html" />
         <option value="$PROJECT_DIR$/js/tippie/app.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1288" />
-    <option name="y" value="1" />
-    <option name="width" value="1591" />
-    <option name="height" value="890" />
+    <option name="x" value="1283" />
+    <option name="y" value="4" />
+    <option name="width" value="1597" />
+    <option name="height" value="888" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -137,6 +139,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -155,41 +158,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tippie" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tippie" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tippie" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tippie" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tippie" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -206,16 +176,17 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="177" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="967" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="965" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="967" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="173" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="169" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -231,118 +202,6 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/js/tippie" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree">
-    <UpdateInfo date="Moments ago" ActionInfo="_Update">
-      <UpdatedFiles>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated from server" />
-          <option name="myStatusName" value="Changed on server" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CHANGED_ON_SERVER" />
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Updated" />
-            <option name="myStatusName" value="Changed" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="UPDATED" />
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/README.md</PATH>
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Created" />
-            <option name="myStatusName" value="Created" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="CREATED" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Deleted" />
-            <option name="myStatusName" value="Deleted" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="true" />
-            <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Restored" />
-            <option name="myStatusName" value="Will be restored" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="RESTORED" />
-          </FILE-GROUP>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Modified" />
-          <option name="myStatusName" value="Modified" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MODIFIED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Skipped" />
-          <option name="myStatusName" value="Skipped" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="SKIPPED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with conflicts" />
-          <option name="myStatusName" value="Will be merged with conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_CONFLICTS" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with tree conflicts" />
-          <option name="myStatusName" value="Merged with tree conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with property conflicts" />
-          <option name="myStatusName" value="Will be merged with property conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged" />
-          <option name="myStatusName" value="Will be merged" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Not in repository" />
-          <option name="myStatusName" value="Not in repository" />
-          <option name="mySupportsDeletion" value="true" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UNKNOWN" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Locally added" />
-          <option name="myStatusName" value="Locally added" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="LOCALLY_ADDED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Locally removed" />
-          <option name="myStatusName" value="Locally removed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="LOCALLY_REMOVED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Switched" />
-          <option name="myStatusName" value="Switched" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="SWITCHED" />
-        </FILE-GROUP>
-      </UpdatedFiles>
-    </UpdateInfo>
   </component>
   <component name="RunManager">
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -421,7 +280,11 @@
       <created>1365268169756</created>
       <updated>1365268169756</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="clean up">
+      <created>1365296411247</created>
+      <updated>1365296411247</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -445,15 +308,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1288" y="1" width="1591" height="890" extended-state="0" />
+    <frame x="1283" y="4" width="1597" height="888" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287879" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20336787" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287879" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20649351" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287879" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.249668" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24724919" sideWeight="0.7966321" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24951644" sideWeight="0.7935065" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28108808" sideWeight="0.9987055" order="7" side_tool="false" content_ui="tabs" />
@@ -506,7 +369,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated UserStorage" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean up" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -521,13 +384,21 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="added project" />
     <MESSAGE value="Updated UserStorage" />
+    <MESSAGE value="clean up" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/js/tippie/ProgressCircle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="17" selection-start="601" selection-end="601" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/demo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="173" column="15" selection-start="4044" selection-end="4045" vertical-scroll-proportion="0.0">
@@ -570,21 +441,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="83" selection-end="83" vertical-scroll-proportion="0.15421687">
-          <folding />
-        </state>
+        <state line="4" column="0" selection-start="83" selection-end="83" vertical-scroll-proportion="0.15421687" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sass/jquery_mobile/jquery.mobile.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="14" selection-start="298" selection-end="298" vertical-scroll-proportion="0.34241244">
+        <state line="11" column="14" selection-start="298" selection-end="298" vertical-scroll-proportion="0.34241244" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/tippie/tippie.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/tippie/init.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="38" selection-start="139" selection-end="151" vertical-scroll-proportion="0.0">
+        <state line="15" column="11" selection-start="562" selection-end="562" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -596,30 +470,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/tippie/tippie.js">
+    <entry file="file://$PROJECT_DIR$/js/tippie/UserStorage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="10" column="0" selection-start="305" selection-end="305" vertical-scroll-proportion="-6.1538463">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/demo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="270" column="10" selection-start="7319" selection-end="7319" vertical-scroll-proportion="-7.12">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/tippie/UserStorage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="38" selection-start="2305" selection-end="2305" vertical-scroll-proportion="-6.4727273">
+        <state line="322" column="6" selection-start="8373" selection-end="8373" vertical-scroll-proportion="-101.01961">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/tippie/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="48" selection-start="2607" selection-end="2607" vertical-scroll-proportion="0.26277372">
+        <state line="46" column="35" selection-start="1548" selection-end="1548" vertical-scroll-proportion="0.44117647">
           <folding />
         </state>
       </provider>

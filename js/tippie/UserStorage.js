@@ -6,6 +6,7 @@
         config = (config = config || {});
         this.Key = config.key;
         this.TippieUserObj = {};
+        this.Events = config.events;
     };
 
     //extend storage, take advantage of short circuit evaluation
@@ -20,8 +21,11 @@
 
     Tippie.UserStorage.prototype = {
 
+        Events: null,
+
         CreateStorage: function()
         {
+
           if(!localStorage.getObject(this.Key))
           {
               this.TippieUserObj = {};
@@ -49,25 +53,7 @@
 
         LoadTipView: function()
         {
-            var canvas = $('#tipLib');
-            canvas.children().remove();
-            for(var currentTipObj = 0; currentTipObj < this.TippieUserObj.tips.length; currentTipObj++)
-            {
-                var tipBtn = $('<a/>').attr({
-                    id : 'tip' + currentTipObj,
-                    'class' : 'tip-item',
-                    'data-role' : 'button'
-                });
-                tipBtn.text('yet');
-               // tipBtn.data('role', 'button');
-                tipBtn.data('total', this.TippieUserObj.tips[currentTipObj].total);
-                tipBtn.data('divide', this.TippieUserObj.tips[currentTipObj].divide);
-                tipBtn.data('percent', this.TippieUserObj.tips[currentTipObj].tip);
-
-                canvas.append(tipBtn);
-                tipBtn.buttonMarkup('refresh');
-            }
-            canvas.append(canvas.children('a').get().reverse());
+            this.Events.Trigger(Tippie.Application.EVENT.TIP_LOADED, this.TippieUserObj.tips);
         }
     };
 })(jQuery);
