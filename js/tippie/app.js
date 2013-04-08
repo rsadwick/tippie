@@ -17,6 +17,7 @@
         SLIDER_CHANGED: 'slider:changed',
         RATING_CHANGED: 'rating:changed',
         DIVISION_CHANGED: 'division:changed',
+        SETTING_CHANGED: 'setting:changed',
         TIP_SAVED: 'tip:saved',
         TIP_LOADED: 'tip:loaded',
         REQUEST_TIP: 'request:tip'
@@ -26,31 +27,19 @@
     {
         Canvas: null,
         Events: null,
+        divisionStepper: null,
 
         InitControls: function () {
 
             var _scope = this;
 
             this.Canvas.find('#slider-1').change(function() {
-                _scope.Events.Trigger(Tippie.Application.EVENT.SLIDER_CHANGED, $(this).slider().val());
+                _scope.Events.Trigger(Tippie.Application.EVENT.SLIDER_CHANGED);
                 _scope.progressBar.Render($(this).slider().val());
             });
 
-            this.Canvas.find('#divide-meal').change(function() {
-                _scope.Events.Trigger(Tippie.Application.EVENT.SLIDER_CHANGED, _scope.Canvas.find('#slider-1').slider().val());
-            });
-
             this.Canvas.find('#meal-total').change(function() {
-                _scope.Events.Trigger(Tippie.Application.EVENT.SLIDER_CHANGED, _scope.Canvas.find('#slider-1').slider().val());
-            });
-
-            //Divide the bill up/down btns
-            this.Canvas.find('#up').on('click', function(e){
-                _scope.Events.Trigger(Tippie.Application.EVENT.DIVISION_CHANGED, e);
-            });
-
-            this.Canvas.find('#down').on('click', function(e){
-                _scope.Events.Trigger(Tippie.Application.EVENT.DIVISION_CHANGED, e);
+                _scope.Events.Trigger(Tippie.Application.EVENT.SLIDER_CHANGED);
             });
 
             //Save state:
@@ -63,7 +52,7 @@
                 currentTip.name = this.Canvas.find('#tip-name').val();
                 currentTip.total = this.Canvas.find('#meal-total').val();
                 currentTip.tip =  this.Canvas.find('#slider-1').slider().val() - 0;
-                currentTip.divide = this.Canvas.find('#divide-meal').val();
+                currentTip.divide = this.divisionStepper.GetValue();
 
                 _scope.settings.SaveTip(currentTip);
 
@@ -86,7 +75,7 @@
                     tipBtn.data('percent',savedTips[currentTipObj].tip);
                     tipBtn.on('click', function(e){
                         _scope.Events.Trigger(Tippie.Application.EVENT.REQUEST_TIP, $(this).data());
-                    })
+                    });
 
                     canvas.append(tipBtn);
                     tipBtn.buttonMarkup('refresh');
@@ -99,15 +88,17 @@
                 //pull in data, set the values, and update the UI:
                 _scope.Canvas.find('#meal-total').val(data.total);
                 _scope.Canvas.find('#slider-1').slider().val(data.percent).slider("refresh");
-                _scope.Canvas.find('#divide-meal').val(data.divide);
+                _scope.divisionStepper.SetValue(data.divide);
                 //call event to propagate all UI updates to view:
                 _scope.Events.Trigger(Tippie.Application.EVENT.SLIDER_CHANGED, _scope.Canvas.find('#slider-1').slider().val());
 
-                $.mobile.changePage('#tipster');
+                $.mobile.changePage('#tipster', {
+                    transition: 'flow'
+                });
             });
 
-            Tippie.Instance().Events.On(Tippie.Application.EVENT.SLIDER_CHANGED, function (value) {
-                Tippie.Instance().UpdateTip(value);
+            Tippie.Instance().Events.On(Tippie.Application.EVENT.SLIDER_CHANGED, function () {
+                Tippie.Instance().UpdateTip(_scope.Canvas.find('#slider-1').slider().val());
                 Tippie.Instance().CalculateTip();
             }, this);
 
@@ -118,23 +109,17 @@
 
             //divisions:
             Tippie.Instance().Events.On(Tippie.Application.EVENT.DIVISION_CHANGED, function (e) {
-                var divide = this.Canvas.find('#divide-meal');
-                switch(e.currentTarget.id){
-                    case 'up':
-                    {
-                        divide.val(Number(divide.val()) + 1);
-                        break;
-                    }
-
-                    case 'down':
-                    {
-                        if(divide.val() > 1)
-                            divide.val(divide.val() - 1);
-                        break;
-                    }
-                }
                 _scope.Events.Trigger(Tippie.Application.EVENT.SLIDER_CHANGED, _scope.Canvas.find('#slider-1').slider().val());
             }, this);
+
+            //division stepper:
+             this.divisionStepper = new Tippie.NumberStep({
+                field: this.Canvas.find('#divide-meal'),
+                up: this.Canvas.find('#up'),
+                down: this.Canvas.find('#down'),
+                events: this.Events,
+                trigger: Tippie.Application.EVENT.DIVISION_CHANGED
+            });
 
             //load any saved tips:
             this.settings.CreateStorage();
@@ -165,7 +150,7 @@
             var total = Math.round(((tippie / 100) * bill) * 100) / 100;
             var tipCurrency = parseFloat(total).toFixed(2);
             var totalCurrency = parseFloat(bill + total).toFixed(2);
-            var divideCurrency = parseFloat((bill + total) / this.Canvas.find('#divide-meal').val()).toFixed(2);
+            var divideCurrency = parseFloat((bill + total) / this.divisionStepper.GetValue()).toFixed(2);
             this.Canvas.find('#tip-amount').text('$' + tipCurrency);
             this.Canvas.find('#bill-total').text('$' + totalCurrency);
             this.Canvas.find('#tip-split').text('$' + divideCurrency);

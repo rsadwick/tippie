@@ -9,7 +9,7 @@
         this.Events = config.events;
     };
 
-    //extend storage, take advantage of short circuit evaluation
+    //extend storage by adding getter/setter: take advantage of short circuit evaluation
     Storage.prototype.setObject = function(key, value) {
         this.setItem(key, JSON.stringify(value));
     }
@@ -25,11 +25,10 @@
 
         CreateStorage: function()
         {
-
           if(!localStorage.getObject(this.Key))
           {
               this.TippieUserObj = {};
-              this.TippieUserObj.id = 'tippie' + new Date().getTime();
+              this.TippieUserObj.id = this.Key + new Date().getTime();
               this.TippieUserObj.tips = [];
               this.TippieUserObj.settings = {};
               localStorage.setObject(this.Key, this.TippieUserObj);
@@ -39,6 +38,7 @@
               this.TippieUserObj = localStorage.getObject(this.Key);
           }
         },
+
         SaveTip: function (obj) {
             var currentTip = this.TippieUserObj.tips;
             currentTip.push(obj);
@@ -54,6 +54,11 @@
         LoadTipView: function()
         {
             this.Events.Trigger(Tippie.Application.EVENT.TIP_LOADED, this.TippieUserObj.tips);
+        },
+
+        SaveSettings: function(obj)
+        {
+            var settings = this.TippieUserObj.settings;
         }
     };
 })(jQuery);

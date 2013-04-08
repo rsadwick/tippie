@@ -191,7 +191,9 @@
 <body>
 <div data-role="page" id="tipster">
 
-    <div data-role="header"><h1>Tippie</h1></div>
+    <div data-role="header"><h1>Tippie</h1>
+        <a href="#settings" data-icon="gear" class="ui-btn-right">Options</a>
+    </div>
     <div data-role="content">
         <div class="container">
             <div class="row">
@@ -322,10 +324,144 @@
 
 </div>
 
+<div data-role="page" id="settings">
+    <div data-role="header">
+        <h1>Settings</h1>
+    </div>
+
+    <div data-role="content">
+        <!-- max tippie -->
+        <div class="row">
+            <div class="twelve columns">
+                <label for="settings-max-tip">Max you'll ever tip:</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="twelve columns">
+                <div class="six columns">
+                    <input id="settings-max-tip" type="number" step="1" min="1" value="1" >
+                </div>
+
+                <div class="six columns">
+                    <a id="settings-max-up" href="#" data-role="button" data-icon="arrow-u" data-iconpos="notext" data-theme="c" data-inline="true">Arrow up</a>
+                    <a id="settings-max-down" href="#" data-role="button" data-icon="arrow-d" data-iconpos="notext" data-theme="c" data-inline="true">Arrow down</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Label 1: Poor Service -->
+        <div class="row">
+            <div class="twelve columns">
+                <label for="settings-max-tip">Poor service:</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="twelve columns">
+                <div class="six columns">
+                    <input id="settings-poor-tip" type="number" step="1" min="1" value="1" >
+                </div>
+
+                <div class="six columns">
+                    <a id="settings-poor-up" href="#" data-role="button" data-icon="arrow-u" data-iconpos="notext" data-theme="c" data-inline="true">Arrow up</a>
+                    <a id="settings-poor-down" href="#" data-role="button" data-icon="arrow-d" data-iconpos="notext" data-theme="c" data-inline="true">Arrow down</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Label 2: Okay Service -->
+        <div class="row">
+            <div class="twelve columns">
+                <label for="settings-max-tip">Okay service:</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="twelve columns">
+                <div class="six columns">
+                    <input id="settings-okay-tip" type="number" step="1" min="1" value="1" >
+                </div>
+
+                <div class="six columns">
+                    <a id="settings-okay-up" href="#" data-role="button" data-icon="arrow-u" data-iconpos="notext" data-theme="c" data-inline="true">Arrow up</a>
+                    <a id="settings-okay-down" href="#" data-role="button" data-icon="arrow-d" data-iconpos="notext" data-theme="c" data-inline="true">Arrow down</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Label 3: Minimal -->
+        <div class="row">
+            <div class="twelve columns">
+                <label for="settings-minimal-tip">minimal service:</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="twelve columns">
+                <div class="six columns">
+                    <input id="settings-minimal-tip" type="number" step="1" min="1" value="1" >
+                </div>
+
+                <div class="six columns">
+                    <a id="settings-minimal-up" href="#" data-role="button" data-icon="arrow-u" data-iconpos="notext" data-theme="c" data-inline="true">Arrow up</a>
+                    <a id="settings-minimal-down" href="#" data-role="button" data-icon="arrow-d" data-iconpos="notext" data-theme="c" data-inline="true">Arrow down</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Label 3: Great -->
+        <div class="row">
+            <div class="twelve columns">
+                <label for="settings-great-tip">Great service:</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="twelve columns">
+                <div class="six columns">
+                    <input id="settings-great-tip" type="number" step="1" min="1" value="1" >
+                </div>
+
+                <div class="six columns">
+                    <a id="settings-great-up" href="#" data-role="button" data-icon="arrow-u" data-iconpos="notext" data-theme="c" data-inline="true">Arrow up</a>
+                    <a id="settings-great-down" href="#" data-role="button" data-icon="arrow-d" data-iconpos="notext" data-theme="c" data-inline="true">Arrow down</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Label 3: Great -->
+        <div class="row">
+            <div class="twelve columns">
+                <label for="settings-great-tip">Excellent service:</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="twelve columns">
+                <div class="six columns">
+                    <input id="settings-excellent-tip" type="number" step="1" min="1" value="1" >
+                </div>
+
+                <div class="six columns">
+                    <a id="settings-excellent-up" href="#" data-role="button" data-icon="arrow-u" data-iconpos="notext" data-theme="c" data-inline="true">Arrow up</a>
+                    <a id="settings-excellent-down" href="#" data-role="button" data-icon="arrow-d" data-iconpos="notext" data-theme="c" data-inline="true">Arrow down</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div data-role="footer">
+        <h4>Page Footer</h4>
+    </div>
+
+</div>
+
 <script src="js/tippie/tippie.js"></script>
 <script src="js/tippie/events.js"></script>
 <script src="js/tippie/app.js"></script>
-
+<script src="js/tippie/NumberStep.js"></script>
 <script src="js/tippie/ProgressCircle.js"></script>
 <script src="js/tippie/UserStorage.js"></script>
 <script src="js/tippie/init.js"></script>

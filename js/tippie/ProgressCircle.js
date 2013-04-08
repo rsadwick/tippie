@@ -28,7 +28,6 @@
                 this.Element.find('#slice').removeClass('gt50');
             }
 
-          //
             this.Element.find('#slice .pie').css({
                 '-webkit-transform':'rotate('+ 360 / this.Max * percent + 'deg)'
             });
