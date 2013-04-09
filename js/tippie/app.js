@@ -82,7 +82,6 @@
                     tipBtn.buttonMarkup('refresh');
                 }
                 canvas.append(canvas.children('a').get().reverse());
-
             }, this);
 
             Tippie.Instance().Events.On(Tippie.Application.EVENT.REQUEST_TIP, function(data){
@@ -103,47 +102,38 @@
                 Tippie.Instance().CalculateTip();
             }, this);
 
-            //Tip Items:
-            this.Canvas.find('.tip-item').live('click', function(e){
-                console.log($(this).data());
-            });
-
             //divisions:
             Tippie.Instance().Events.On(Tippie.Application.EVENT.DIVISION_CHANGED, function (e) {
                 _scope.Events.Trigger(Tippie.Application.EVENT.SLIDER_CHANGED, _scope.Canvas.find('#slider-1').slider().val());
             }, this);
 
-            //settings:
-            //divisions:
-            Tippie.Instance().Events.On(Tippie.Application.EVENT.SETTING_CHANGED, function (e) {
-                console.log($(e.currentTarget).attr('class'))
-                switch($(e.currentTarget).attr('class')){
-                    case 'settings-max-tip':
-                        console.log('max')
-                    break;
-                }
-            }, this);
-
-            //division stepper:
-             this.divisionStepper = new Tippie.NumberStep({
-                field: this.Canvas.find('#divide-meal'),
-                up: this.Canvas.find('#up'),
-                down: this.Canvas.find('#down'),
-                events: this.Events,
-                trigger: Tippie.Application.EVENT.DIVISION_CHANGED
-            });
-
-            this.settingsMax = new Tippie.NumberStep({
-                field: this.Canvas.find('#settings-max-tip'),
-                up: this.Canvas.find('#settings-max-up'),
-                down: this.Canvas.find('#settings-max-down'),
-                events: this.Events,
-                trigger: Tippie.Application.EVENT.SETTING_CHANGED
-            });
-
             //load any saved tips:
             this.settings.CreateStorage();
             this.settings.LoadTipView();
+
+            //Number Steppers:
+            this.divisionStepper = new Tippie.NumberStep({
+                field : '#divide-meal',
+                up: '#up',
+                down: '#down',
+                events: this.Events,
+                trigger: Tippie.Application.EVENT.DIVISION_CHANGED,
+                min: 1,
+                max: 99999,
+                step: 1
+            });
+
+            this.settingsMax = new Tippie.NumberStep({
+                field : '#settings-max-tip',
+                up: '#settings-max-up',
+                down: '#settings-max-down',
+                events: this.Events,
+                trigger: Tippie.Application.EVENT.SETTING_CHANGED,
+                min: 0,
+                max: 100,
+                step: 5
+
+            });
         },
 
         UpdateTip: function(value){

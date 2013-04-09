@@ -25,18 +25,27 @@
 
         CreateStorage: function()
         {
-          if(!localStorage.getObject(this.Key))
-          {
-              this.TippieUserObj = {};
-              this.TippieUserObj.id = this.Key + new Date().getTime();
-              this.TippieUserObj.tips = [];
-              this.TippieUserObj.settings = {};
-              localStorage.setObject(this.Key, this.TippieUserObj);
-          }
-          else
-          {
-              this.TippieUserObj = localStorage.getObject(this.Key);
-          }
+            if(!localStorage.getObject(this.Key)){
+                this.TippieUserObj = {};
+                this.TippieUserObj.id = this.Key + new Date().getTime();
+                this.TippieUserObj.tips = [];
+                this.TippieUserObj.settings = {};
+                localStorage.setObject(this.Key, this.TippieUserObj);
+            }
+            else
+            {
+                this.TippieUserObj = localStorage.getObject(this.Key);
+            }
+
+            this.Events.On(Tippie.Application.EVENT.SETTING_CHANGED, function (e) {
+
+                switch($(e).data('setting')){
+                    case 'max':
+                        //TODO: add in setting events to bubble up to app- update view.
+                        console.log('max')
+                    break;
+                    }
+            }, this);
         },
 
         SaveTip: function (obj) {
