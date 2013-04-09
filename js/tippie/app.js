@@ -28,6 +28,7 @@
         Canvas: null,
         Events: null,
         divisionStepper: null,
+        settingsMax: null,
 
         InitControls: function () {
 
@@ -112,6 +113,17 @@
                 _scope.Events.Trigger(Tippie.Application.EVENT.SLIDER_CHANGED, _scope.Canvas.find('#slider-1').slider().val());
             }, this);
 
+            //settings:
+            //divisions:
+            Tippie.Instance().Events.On(Tippie.Application.EVENT.SETTING_CHANGED, function (e) {
+                console.log($(e.currentTarget).attr('class'))
+                switch($(e.currentTarget).attr('class')){
+                    case 'settings-max-tip':
+                        console.log('max')
+                    break;
+                }
+            }, this);
+
             //division stepper:
              this.divisionStepper = new Tippie.NumberStep({
                 field: this.Canvas.find('#divide-meal'),
@@ -119,6 +131,14 @@
                 down: this.Canvas.find('#down'),
                 events: this.Events,
                 trigger: Tippie.Application.EVENT.DIVISION_CHANGED
+            });
+
+            this.settingsMax = new Tippie.NumberStep({
+                field: this.Canvas.find('#settings-max-tip'),
+                up: this.Canvas.find('#settings-max-up'),
+                down: this.Canvas.find('#settings-max-down'),
+                events: this.Events,
+                trigger: Tippie.Application.EVENT.SETTING_CHANGED
             });
 
             //load any saved tips:

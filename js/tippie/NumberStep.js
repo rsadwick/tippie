@@ -18,8 +18,8 @@
 
             _scope = this;
             //change event on input:
-            this.Field.change(function() {
-                _scope.AssignTriggers();
+            this.Field.change(function(e) {
+                _scope.AssignTriggers(e);
             });
             //Divide the bill up/down btns
             this.Up.on('click', this.SetEvents);
@@ -42,7 +42,7 @@
                     break;
                 }
             }
-            _scope.AssignTriggers();
+            _scope.AssignTriggers(e);
         },
 
         AssignTriggers: function(e){

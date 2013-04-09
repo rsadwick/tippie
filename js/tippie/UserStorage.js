@@ -58,7 +58,12 @@
 
         SaveSettings: function(obj)
         {
-            var settings = this.TippieUserObj.settings;
+            this.TippieUserObj.settings = obj;
+        },
+
+        LoadSettings: function()
+        {
+            return this.TippieUserObj.settings;
         }
     };
 })(jQuery);

@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05c0dfdb-6cc0-48de-bb99-467a7a69b878" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/tippie/NumberStep.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/tippie/ProgressCircle.js" afterPath="$PROJECT_DIR$/js/tippie/ProgressCircle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/tippie/NumberStep.js" afterPath="$PROJECT_DIR$/js/tippie/NumberStep.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/tippie/UserStorage.js" afterPath="$PROJECT_DIR$/js/tippie/UserStorage.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/tippie/app.js" afterPath="$PROJECT_DIR$/js/tippie/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo.html" afterPath="$PROJECT_DIR$/demo.html" />
@@ -11,15 +10,15 @@
     </list>
     <ignored path="tippie.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/app.js" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1365458452326" ignored="false" />
-    <file path="/demo.html" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1365447736090" ignored="false" />
+    <file path="/app.js" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1365464211653" ignored="false" />
+    <file path="/demo.html" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1365464053345" ignored="false" />
     <file path="/ProgressCircle.js" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1364362379201" ignored="false" />
     <file path="/init.js" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1364949729742" ignored="false" />
-    <file path="/Dummy.txt" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1365434787360" ignored="false" />
+    <file path="/Dummy.txt" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1365462288741" ignored="false" />
     <file path="/README.md" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1365205882162" ignored="false" />
-    <file path="/UserStorage.js" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1365435872903" ignored="false" />
+    <file path="/UserStorage.js" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1365463124990" ignored="false" />
     <file path="/test.html" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1365352649367" ignored="false" />
-    <file path="/NumberStep.js" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1365458373712" ignored="false" />
+    <file path="/NumberStep.js" changelist="05c0dfdb-6cc0-48de-bb99-467a7a69b878" time="1365463484538" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +38,7 @@
       <file leaf-file-name="demo.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="453" column="0" selection-start="13799" selection-end="13799" vertical-scroll-proportion="-74.15385">
+            <state line="342" column="22" selection-start="9044" selection-end="9044" vertical-scroll-proportion="-10.16">
               <folding />
             </state>
           </provider>
@@ -48,7 +47,16 @@
       <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/tippie/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="0" selection-start="3236" selection-end="3236" vertical-scroll-proportion="1.457672">
+            <state line="121" column="42" selection-start="5036" selection-end="5036" vertical-scroll-proportion="3.0339892">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserStorage.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/tippie/UserStorage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="52" column="0" selection-start="1573" selection-end="1573" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -57,7 +65,7 @@
       <file leaf-file-name="NumberStep.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/tippie/NumberStep.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="16" selection-start="1979" selection-end="1987" vertical-scroll-proportion="0.0">
+            <state line="60" column="13" selection-start="1873" selection-end="1873" vertical-scroll-proportion="-14.769231">
               <folding />
             </state>
           </provider>
@@ -106,17 +114,16 @@
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/js/tippie/ProgressCircle.js" />
         <option value="$PROJECT_DIR$/js/tippie/UserStorage.js" />
-        <option value="$PROJECT_DIR$/demo.html" />
         <option value="$PROJECT_DIR$/js/tippie/NumberStep.js" />
+        <option value="$PROJECT_DIR$/demo.html" />
         <option value="$PROJECT_DIR$/js/tippie/app.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1296" />
-    <option name="height" value="1040" />
+    <option name="x" value="1317" />
+    <option name="width" value="1574" />
+    <option name="height" value="778" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -213,17 +220,17 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Aptana Studio 3 Workspace/.metadata/.plugins/com.aptana.portablegit.win32/bin/git.exe" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="177" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="967" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="965" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="965" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="967" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="173" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="169" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -346,14 +353,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1040" extended-state="6" />
+    <frame x="1317" y="0" width="1574" height="778" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.071347676" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.07121212" sideWeight="0.9980366" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287879" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.249668" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23014587" sideWeight="0.92865235" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19109948" sideWeight="0.9287879" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28108808" sideWeight="0.9987055" order="7" side_tool="false" content_ui="tabs" />
@@ -501,27 +508,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="453" column="0" selection-start="13799" selection-end="13799" vertical-scroll-proportion="-74.15385">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/tippie/UserStorage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="94" selection-start="1628" selection-end="1710" vertical-scroll-proportion="0.7279597">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/tippie/NumberStep.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="16" selection-start="1979" selection-end="1987" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/tippie/init.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="11" selection-start="562" selection-end="562" vertical-scroll-proportion="0.0">
@@ -529,9 +515,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/tippie/UserStorage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="0" selection-start="1573" selection-end="1573" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/tippie/NumberStep.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="13" selection-start="1873" selection-end="1873" vertical-scroll-proportion="-14.769231">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="342" column="22" selection-start="9044" selection-end="9044" vertical-scroll-proportion="-10.16">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/tippie/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="0" selection-start="3236" selection-end="3236" vertical-scroll-proportion="1.457672">
+        <state line="121" column="42" selection-start="5036" selection-end="5036" vertical-scroll-proportion="3.0339892">
           <folding />
         </state>
       </provider>
