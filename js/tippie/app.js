@@ -54,6 +54,23 @@
                 _scope.Events.Trigger(Tippie.Application.EVENT.TIP_SAVED, e);
             });
 
+            //email modal:
+            this.Canvas.find('#emailBtn').on('click', function(){
+                //prepare date for msg body:
+                var msg = "Total: " +  _scope.Canvas.find('#bill-total').text();
+                msg += "\nTip: " +  _scope.Canvas.find('#tip-amount').text();
+                //only display split if necessary:
+                if( _scope.Canvas.find('#divide-meal').val() > 1)
+                    msg += "\nSplit: " + _scope.Canvas.find('#tip-split').text();
+                _scope.Canvas.find('#emailDialog textarea').text(msg);
+                $.mobile.changePage('#emailDialog', {transition: 'pop', role: 'dialog'});
+            });
+
+            //email form
+            this.Canvas.find('#email-to').change(function() {
+                _scope.Canvas.find('#sendEmailBtn').attr('href','mailto:' + _scope.Canvas.find('#email-to').val() + '?subject=Tippie Info&body=' +  _scope.Canvas.find('#emailDialog textarea').val() )
+            });
+
             Tippie.Instance().Events.On(Tippie.Application.EVENT.TIP_SAVED, function(e){
                 var currentTip = {};
                 currentTip.name = this.Canvas.find('#tip-name').val();
@@ -196,10 +213,9 @@
                 step: 1
             });
 
-            //load any saved tips:
+            //create/load saved tips & settings:
             this.settings.CreateStorage();
             this.settings.LoadTipView();
-            //settings
             this.settings.LoadSettings();
         },
 

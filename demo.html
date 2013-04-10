@@ -192,6 +192,7 @@
 <div data-role="page" id="tipster">
 
     <div data-role="header"><h1>Tippie</h1>
+        <a href="#tipMenu" data-icon="gear" class="ui-btn-left">Load Tip</a>
         <a href="#settings" data-icon="gear" class="ui-btn-right">Options</a>
     </div>
     <div data-role="content">
@@ -261,7 +262,7 @@
                 </div>
 
                 <div class="four columns">
-                    <a href="#" data-role="button">Email</a>
+                    <a id="emailBtn" href="#" data-role="button" data-rel="dialog">Email</a>
                 </div>
 
                 <div class="four columns">
@@ -307,6 +308,7 @@
 
 </div>
 
+<!-- Save Tip Dialog -->
 <div data-role="page" id="saveDialog">
     <div data-role="header">
         <h1>Give it a name</h1>
@@ -315,7 +317,7 @@
     <div data-role="content">
         <label for="tip-name">Give your tip a name:</label>
         <input type="text" name="tip-name" id="tip-name" value="">
-        <a id="saveBtn" href="demo.html" data-role="button" data-theme="e">Save</a>
+        <a id="saveBtn" href="#tipster" data-role="button" data-theme="e">Save</a>
     </div>
 
     <div data-role="footer">
@@ -323,6 +325,30 @@
     </div>
 
 </div>
+
+<!-- Email Dialog -->
+
+<div data-role="page" id="emailDialog">
+    <div data-role="header">
+        <h1>Give it a name</h1>
+    </div>
+
+    <div data-role="content">
+        <label for="email-to">To:</label>
+        <input type="email" name="email-to" id="email-to" value="">
+
+        <label for="email-msg">Message:</label>
+        <textarea type="text" name="email-msg" id="email-msg" value=""></textarea>
+
+        <a id="sendEmailBtn" data-role="button" data-theme="e">Send</a>
+    </div>
+
+    <div data-role="footer">
+        <h4>Page Footer</h4>
+    </div>
+
+</div>
+
 
 <div data-role="page" id="settings">
     <div data-role="header">
@@ -429,11 +455,7 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
+    </div>
 
     <div data-role="footer">
         <h4>Page Footer</h4>
@@ -448,7 +470,6 @@
 <script src="js/tippie/UserStorage.js"></script>
 <script src="js/tippie/NumberStep.js"></script>
 <script src="js/tippie/init.js"></script>
-
 
   </body>
 </html>

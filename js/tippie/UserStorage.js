@@ -9,7 +9,6 @@
         this.Events = config.events;
 
     };
-    var _scope = this;
     //extend storage by adding getter/setter: take advantage of short circuit evaluation
     Storage.prototype.setObject = function(key, value) {
         this.setItem(key, JSON.stringify(value));
@@ -31,14 +30,13 @@
                 this.TippieUserObj.id = this.Key + new Date().getTime();
                 this.TippieUserObj.tips = [];
                 this.TippieUserObj.settings = [];
+                //set default settings:
                 this.TippieUserObj.settings.push([
-                    "settings-max-tip", 100,
-                    "settings-poor-tip", 2,
-                    "settings-okay-tip", 7,
-                    "settings-minimal-tip", 12,
+                    "settings-max-tip", 20,
                     "settings-great-tip", 15,
-                    "settings-excellent-tip", 20])
-                //this.TippieUserObj.settings.maxTip = 5;
+                    "settings-minimal-tip", 10,
+                    "settings-okay-tip", 5,
+                    "settings-poor-tip", 0])
                 localStorage.setObject(this.Key, this.TippieUserObj);
             }
             else
@@ -62,23 +60,13 @@
             this.LoadTipView();
         },
 
-        LoadTip: function(){
-            return localStorage.getObject(this.Key);
-        },
-
         LoadTipView: function()
         {
             this.Events.Trigger(Tippie.Application.EVENT.TIP_LOADED, this.TippieUserObj.tips);
         },
 
-        SaveSettings: function(obj)
-        {
-            this.TippieUserObj.settings = obj;
-        },
-
         LoadSettings: function()
         {
-
             this.Events.Trigger(Tippie.Application.EVENT.SETTING_LOADED, this.TippieUserObj.settings);
         }
     };
