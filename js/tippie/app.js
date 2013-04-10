@@ -17,7 +17,9 @@
         SLIDER_CHANGED: 'slider:changed',
         RATING_CHANGED: 'rating:changed',
         DIVISION_CHANGED: 'division:changed',
-        SETTING_CHANGED: 'setting:changed',
+        SETTING_CHANGED: 'settings:changed',
+        SETTING_MAX_CHANGED: 'settings:max_changed',
+        SETTING_LOADED: 'setting:loaded',
         TIP_SAVED: 'tip:saved',
         TIP_LOADED: 'tip:loaded',
         REQUEST_TIP: 'request:tip'
@@ -29,6 +31,10 @@
         Events: null,
         divisionStepper: null,
         settingsMax: null,
+        settingsGreat: null,
+        settingsMinimal: null,
+        settingsOkay: null,
+        settingsPoor: null,
 
         InitControls: function () {
 
@@ -84,6 +90,22 @@
                 canvas.append(canvas.children('a').get().reverse());
             }, this);
 
+            Tippie.Instance().Events.On(Tippie.Application.EVENT.SETTING_LOADED, function(savedSettings){
+                //update setting inputs
+                for(var currentSetting = 0; currentSetting < savedSettings.length; currentSetting++)
+                {
+                    _scope.Canvas.find('#' + savedSettings[currentSetting][0]).val(savedSettings[currentSetting][1]);
+                    //reversal of ids to update rating values:
+                    this.UpdateRatingValue(savedSettings.length - currentSetting - 1, savedSettings[currentSetting][1]);
+                    //update max setting for progress bar:
+                    if(currentSetting == 0){
+                        this.progressBar.SetMax(savedSettings[currentSetting][1]);
+                        this.Canvas.find('#slider-1').attr('max', savedSettings[currentSetting][1])
+                    }
+                }
+
+            }, this);
+
             Tippie.Instance().Events.On(Tippie.Application.EVENT.REQUEST_TIP, function(data){
                 //pull in data, set the values, and update the UI:
                 _scope.Canvas.find('#meal-total').val(data.total);
@@ -107,10 +129,6 @@
                 _scope.Events.Trigger(Tippie.Application.EVENT.SLIDER_CHANGED, _scope.Canvas.find('#slider-1').slider().val());
             }, this);
 
-            //load any saved tips:
-            this.settings.CreateStorage();
-            this.settings.LoadTipView();
-
             //Number Steppers:
             this.divisionStepper = new Tippie.NumberStep({
                 field : '#divide-meal',
@@ -131,14 +149,62 @@
                 trigger: Tippie.Application.EVENT.SETTING_CHANGED,
                 min: 0,
                 max: 100,
-                step: 5
-
+                step: 1
             });
+
+            this.settingsGreat = new Tippie.NumberStep({
+                field : '#settings-great-tip',
+                up: '#settings-great-up',
+                down: '#settings-great-down',
+                events: this.Events,
+                trigger: Tippie.Application.EVENT.SETTING_CHANGED,
+                min: 0,
+                max: 100,
+                step: 1
+            });
+
+            this.settingsMinimal = new Tippie.NumberStep({
+                field : '#settings-minimal-tip',
+                up: '#settings-minimal-up',
+                down: '#settings-minimal-down',
+                events: this.Events,
+                trigger: Tippie.Application.EVENT.SETTING_CHANGED,
+                min: 0,
+                max: 100,
+                step: 1
+            });
+
+            this.settingsOkay = new Tippie.NumberStep({
+                field : '#settings-okay-tip',
+                up: '#settings-okay-up',
+                down: '#settings-okay-down',
+                events: this.Events,
+                trigger: Tippie.Application.EVENT.SETTING_CHANGED,
+                min: 0,
+                max: 100,
+                step: 1
+            });
+
+            this.settingsPoor = new Tippie.NumberStep({
+                field : '#settings-poor-tip',
+                up: '#settings-poor-up',
+                down: '#settings-poor-down',
+                events: this.Events,
+                trigger: Tippie.Application.EVENT.SETTING_CHANGED,
+                min: 0,
+                max: 100,
+                step: 1
+            });
+
+            //load any saved tips:
+            this.settings.CreateStorage();
+            this.settings.LoadTipView();
+            //settings
+            this.settings.LoadSettings();
         },
 
         UpdateTip: function(value){
             this.Canvas.find('.rating li').each(function( index ) {
-
                 if(value > $(this).prev().data('percent') && value <= $(this).data('percent') || !$(this).prev().data('percent') && value <= $(this).data('percent'))
                 {
                     $(this).addClass('active');
@@ -148,6 +214,10 @@
                     $(this).removeClass('active');
                 }
             });
+        },
+
+        UpdateRatingValue: function(rating, value){
+            this.Canvas.find('.rating li').eq(rating).data('percent', Number(value));
         },
 
         UpdateRating: function(value){

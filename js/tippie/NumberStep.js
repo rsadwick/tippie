@@ -68,7 +68,13 @@
                         break;
 
                     case Tippie.Application.EVENT.SETTING_CHANGED:
-                        this.Events.Trigger(Tippie.Application.EVENT.SETTING_CHANGED, scope.Field);
+
+                        var settings = [];
+                        scope.Field.parents().find('#settings input').each(function(index){
+                            settings.push([$(this).attr('id'), $(this).val()]);
+                        });
+
+                        this.Events.Trigger(Tippie.Application.EVENT.SETTING_CHANGED, settings);
                         break;
                 }
             }
@@ -82,6 +88,11 @@
         SetValue: function(val)
         {
             this.Field.val(val);
+        },
+
+        SetMaxValue: function(val)
+        {
+            this.Max = val;
         }
     };
 })(jQuery);

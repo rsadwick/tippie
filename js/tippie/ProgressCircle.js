@@ -13,7 +13,6 @@
     Tippie.ProgressCircle.prototype = {
 
         Render: function (percent) {
-
             if(percent >= this.Max / 2)
             {
                 if(this.Element.find('.fill').length == 0)
@@ -32,6 +31,10 @@
                 '-webkit-transform':'rotate('+ 360 / this.Max * percent + 'deg)'
             });
             this.Element.find('.percent').html(Math.round(percent) + '%' );
+        },
+
+        SetMax: function(value){
+            this.Max = value;
         }
     };
 })(jQuery);

@@ -7,8 +7,9 @@
         this.Key = config.key;
         this.TippieUserObj = {};
         this.Events = config.events;
-    };
 
+    };
+    var _scope = this;
     //extend storage by adding getter/setter: take advantage of short circuit evaluation
     Storage.prototype.setObject = function(key, value) {
         this.setItem(key, JSON.stringify(value));
@@ -29,7 +30,15 @@
                 this.TippieUserObj = {};
                 this.TippieUserObj.id = this.Key + new Date().getTime();
                 this.TippieUserObj.tips = [];
-                this.TippieUserObj.settings = {};
+                this.TippieUserObj.settings = [];
+                this.TippieUserObj.settings.push([
+                    "settings-max-tip", 100,
+                    "settings-poor-tip", 2,
+                    "settings-okay-tip", 7,
+                    "settings-minimal-tip", 12,
+                    "settings-great-tip", 15,
+                    "settings-excellent-tip", 20])
+                //this.TippieUserObj.settings.maxTip = 5;
                 localStorage.setObject(this.Key, this.TippieUserObj);
             }
             else
@@ -37,14 +46,11 @@
                 this.TippieUserObj = localStorage.getObject(this.Key);
             }
 
-            this.Events.On(Tippie.Application.EVENT.SETTING_CHANGED, function (e) {
+            this.Events.On(Tippie.Application.EVENT.SETTING_CHANGED, function (settings) {
 
-                switch($(e).data('setting')){
-                    case 'max':
-                        //TODO: add in setting events to bubble up to app- update view.
-                        console.log('max')
-                    break;
-                    }
+                this.TippieUserObj.settings = settings;
+                localStorage.setObject(this.Key, this.TippieUserObj)
+                this.LoadSettings();
             }, this);
         },
 
@@ -72,7 +78,8 @@
 
         LoadSettings: function()
         {
-            return this.TippieUserObj.settings;
+
+            this.Events.Trigger(Tippie.Application.EVENT.SETTING_LOADED, this.TippieUserObj.settings);
         }
     };
 })(jQuery);
