@@ -191,7 +191,8 @@
 <body>
 <div data-role="page" id="tipster">
 
-    <div data-role="header"><h1>Tippie</h1>
+    <div data-role="header" style="overflow:hidden;">
+        <h1>Tippie</h1>
         <a href="#tipMenu" data-icon="gear" class="ui-btn-left">Load Tip</a>
         <a href="#settings" data-icon="gear" class="ui-btn-right">Options</a>
     </div>
@@ -266,14 +267,20 @@
                 </div>
 
                 <div class="four columns">
-                    <a href="#" data-role="button">Clear</a>
+                    <a id="clearBtn" href="#" data-role="button">Clear</a>
                 </div>
             </div>
         </div>
     </div>
 
     <div data-role="footer">
-        <h4><a href="#tipMenu" data-transition="flow">About Tippie</a></h4>
+        <div data-role="navbar" data-iconpos="left" data-id="foo1" data-position="fixed">
+            <ul>
+                <li><a href="#tipMenu" data-icon="grid">Load Tips</a></li>
+                <li><a href="#tipster" data-icon="star" class="ui-btn-active ui-state-persist">Tip</a></li>
+                <li><a href="#settings" data-icon="gear">Settings</a></li>
+            </ul>
+        </div>
     </div>
 </div>
 
@@ -303,7 +310,13 @@
     </div>
 
     <div data-role="footer">
-        <h4>Page Footer</h4>
+        <div data-role="navbar" data-iconpos="left" data-id="foo1" data-position="fixed">
+            <ul>
+                <li><a href="#tipMenu" data-icon="grid" class="ui-btn-active ui-state-persist">Load Tips</a></li>
+                <li><a href="#tipster" data-icon="star">Tip</a></li>
+                <li><a href="#settings" data-icon="gear">Settings</a></li>
+            </ul>
+        </div>
     </div>
 
 </div>
@@ -458,8 +471,16 @@
     </div>
 
     <div data-role="footer">
-        <h4>Page Footer</h4>
+        <div data-role="navbar" data-iconpos="left" data-id="foo1" data-position="fixed">
+            <ul>
+                <li><a href="#tipMenu" data-icon="grid">Load Tips</a></li>
+                <li><a href="#tipster" data-icon="star">Tip</a></li>
+                <li><a href="#settings" data-icon="gear" class="ui-btn-active ui-state-persist">Settings</a></li>
+            </ul>
+        </div>
     </div>
+
+
 
 </div>
 

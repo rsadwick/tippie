@@ -71,6 +71,14 @@
                 _scope.Canvas.find('#sendEmailBtn').attr('href','mailto:' + _scope.Canvas.find('#email-to').val() + '?subject=Tippie Info&body=' +  _scope.Canvas.find('#emailDialog textarea').val() )
             });
 
+            //clear tippie:
+            this.Canvas.find('#clearBtn').on('click', function(){
+                _scope.Canvas.find('#meal-total').val(0.00);
+                _scope.Canvas.find('#slider-1').slider().val(0).slider("refresh");
+                _scope.Canvas.find('#divide-meal').val(1);
+                _scope.Events.Trigger(Tippie.Application.EVENT.SLIDER_CHANGED);
+            });
+
             Tippie.Instance().Events.On(Tippie.Application.EVENT.TIP_SAVED, function(e){
                 var currentTip = {};
                 currentTip.name = this.Canvas.find('#tip-name').val();
