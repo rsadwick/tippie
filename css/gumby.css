@@ -1824,7 +1824,7 @@ body .video { width: 100%; position: relative; height: 0; padding-bottom: 56.25%
 
 .timer > #slice.gt50 { clip: rect(auto, auto, auto, auto); }
 
-.timer > #slice > .pie { border: 0.1em solid #7ba3c1; position: absolute; width: 0.8em; /* 1 - (2 * border width) */ height: 0.8em; /* 1 - (2 * border width) */ clip: rect(0em, 0.4em, 1em, 0em); -moz-border-radius: 0.5em; -webkit-border-radius: 0.5em; border-radius: 0.5em; }
+.timer > #slice > .pie { border: 0.1em solid #da4936; position: absolute; width: 0.8em; /* 1 - (2 * border width) */ height: 0.8em; /* 1 - (2 * border width) */ clip: rect(0em, 0.4em, 1em, 0em); -moz-border-radius: 0.5em; -webkit-border-radius: 0.5em; border-radius: 0.5em; }
 
 .timer > #slice > .pie.fill { -moz-transform: rotate(180deg) !important; -webkit-transform: rotate(180deg) !important; -o-transform: rotate(180deg) !important; transform: rotate(180deg) !important; }
 
@@ -1851,9 +1851,6 @@ body .video { width: 100%; position: relative; height: 0; padding-bottom: 56.25%
 * http://jquery.org/license
 *
 */
-/* Swatches */
-/* A
------------------------------------------------------------------------------------------------------------*/
 .ui-bar-a { border: 1px solid #333333; background: #111111; color: white; font-weight: bold; text-shadow: 0 -1px 0 black; background-image: -webkit-gradient(linear, left top, left bottom, from(#3c3c3c), to(#111111)); /* Saf4+, Chrome */ background-image: -webkit-linear-gradient(#3c3c3c, #111111); /* Chrome 10+, Saf5.1+ */ background-image: -moz-linear-gradient(#3c3c3c, #111111); /* FF3.6 */ background-image: -ms-linear-gradient(#3c3c3c, #111111); /* IE10 */ background-image: -o-linear-gradient(#3c3c3c, #111111); /* Opera 11.10+ */ background-image: linear-gradient(#3c3c3c, #111111); }
 
 .ui-bar-a, .ui-bar-a input, .ui-bar-a select, .ui-bar-a textarea, .ui-bar-a button { font-family: Helvetica, Arial, sans-serif; }
@@ -2806,7 +2803,7 @@ body.ui-mobile-viewport, div.ui-mobile-viewport { overflow-x: hidden; }
 
 .ui-fullsize .ui-btn-inner, .ui-fullsize .ui-btn-inner { font-size: 16px; padding: .6em 20px; }
 
-.ui-btn-icon-notext { width: 44px; height: 44px; }
+.ui-btn-icon-notext { width: 45px; height: 45px; }
 
 .ui-btn-icon-notext .ui-btn-inner { padding: 0; height: 100%; }
 
@@ -3409,14 +3406,14 @@ input.ui-input-text.ui-slider-input { display: block; float: left; margin: 0; pa
 
 .ui-slider-input::-webkit-outer-spin-button, .ui-slider-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 
-.ui-slider-track, .ui-slider-switch { position: relative; overflow: visible; height: 24px; margin: 0 12px 0 0px; top: 12px; }
+.ui-slider-track, .ui-slider-switch { position: relative; overflow: visible; height: 24px; margin: 0 12px 0 0; top: 12px; }
 
 .ui-slider-track.ui-mini { height: 12px; top: 8px; }
 
 .ui-slider-bg { border: none; height: 100%; }
 
 /* High level of specificity to override button margins in grids */
-.ui-slider-track .ui-btn.ui-slider-handle, .ui-slider-switch .ui-btn.ui-slider-handle { position: absolute; z-index: 1; top: 18%; width: 44px; height: 44px; margin: -15px 0 0 -15px; outline: 0; }
+.ui-slider-track .ui-btn.ui-slider-handle, .ui-slider-switch .ui-btn.ui-slider-handle { position: absolute; z-index: 1; top: 18%; width: 45px; height: 45px; margin: -15px 0 0 -15px; outline: 0; }
 
 .ui-slider-track.ui-mini .ui-slider-handle { height: 14px; width: 14px; margin: -8px 0 0 -7px; }
 

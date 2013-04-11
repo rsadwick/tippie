@@ -41,7 +41,7 @@
   clip:rect(auto, auto, auto, auto);
 }
 .timer > #slice > .pie {
-  border: 0.1em solid $primary-color;
+  border: 0.1em solid $secondary-color;
   position: absolute;
   width: 0.8em; /* 1 - (2 * border width) */
   height: 0.8em; /* 1 - (2 * border width) */
@@ -51,10 +51,10 @@
   border-radius: 0.5em;
 }
 .timer > #slice > .pie.fill {
-  -moz-transform:rotate(180deg) !important;
-  -webkit-transform:rotate(180deg) !important;
-  -o-transform:rotate(180deg) !important;
-  transform:rotate(180deg) !important;
+  -moz-transform: rotate(180deg) !important;
+  -webkit-transform: rotate(180deg) !important;
+  -o-transform: rotate(180deg) !important;
+  transform: rotate(180deg) !important;
 }
 .timer.fill > .percent {
   display: none;

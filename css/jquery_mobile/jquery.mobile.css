@@ -1,9 +1,9 @@
 /*
 Syntax error: Undefined variable: "$mobile-button-size".
-        on line 2055 of C:/Users/sadwickr.STPETE/Documents/GitHub/tippie/sass/jquery_mobile/jquery.mobile.scss
+        on line 2049 of C:/Users/sadwickr.STPETE/Documents/GitHub/tippie/sass/jquery_mobile/jquery.mobile.scss
 
 Backtrace:
-C:/Users/sadwickr.STPETE/Documents/GitHub/tippie/sass/jquery_mobile/jquery.mobile.scss:2055
+C:/Users/sadwickr.STPETE/Documents/GitHub/tippie/sass/jquery_mobile/jquery.mobile.scss:2049
 C:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.7/lib/sass/script/variable.rb:49:in `_perform'
 C:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.7/lib/sass/script/node.rb:40:in `perform'
 C:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:298:in `visit_prop'
@@ -74,4 +74,4 @@ C:/Ruby200/bin/compass:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined variable: \"$mobile-button-size\".\A         on line 2055 of C:/Users/sadwickr.STPETE/Documents/GitHub/tippie/sass/jquery_mobile/jquery.mobile.scss"; }
+  content: "Syntax error: Undefined variable: \"$mobile-button-size\".\A         on line 2049 of C:/Users/sadwickr.STPETE/Documents/GitHub/tippie/sass/jquery_mobile/jquery.mobile.scss"; }
