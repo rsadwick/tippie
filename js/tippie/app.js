@@ -140,7 +140,7 @@
                 _scope.Events.Trigger(Tippie.Application.EVENT.SLIDER_CHANGED, _scope.Canvas.find('#slider-1').slider().val());
 
                 $.mobile.changePage('#tipster', {
-                    transition: 'flow'
+                    transition: 'fade'
                 });
             });
 
