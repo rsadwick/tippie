@@ -1,1 +1,93 @@
-// Your custom SCSS should be written here...
+.rating li.active
+{
+  background: $secondary-color;
+  color: $navbar-link-color;
+}
+
+@media only screen and (max-width: 767px) {
+
+  h1 {
+    font: bold italic 100px georgia, times new roman, serif;
+    -webkit-transition-duration: .5s;
+  }
+
+}
+
+.ui-slider-track, .ui-slider-switch {
+  margin: 0;
+}
+
+.timer {
+  position: relative;
+  font-size: 200px;
+  width: 1em;
+  height: 1em;
+  padding: 4px 4px;
+}
+.timer > .percent {
+  position: absolute;
+  top: 16px;
+  width: 3.33em;
+  font-size: 13px;
+  text-align: center;
+}
+.timer > #slice {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  clip: rect(0px, 1em, 1em, 0.4em);
+}
+.timer > #slice.gt50 {
+  clip:rect(auto, auto, auto, auto);
+}
+.timer > #slice > .pie {
+  border: 0.1em solid $primary-color;
+  position: absolute;
+  width: 0.8em; /* 1 - (2 * border width) */
+  height: 0.8em; /* 1 - (2 * border width) */
+  clip: rect(0em, 0.4em, 1em, 0em);
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  border-radius: 0.5em;
+}
+.timer > #slice > .pie.fill {
+  -moz-transform:rotate(180deg) !important;
+  -webkit-transform:rotate(180deg) !important;
+  -o-transform:rotate(180deg) !important;
+  transform:rotate(180deg) !important;
+}
+.timer.fill > .percent {
+  display: none;
+}
+.timer.fill > #slice > .pie {
+  border: transparent;
+  background-color: #c0c0c0;
+  width: 1em;
+  height: 1em;
+}
+
+#slider-val input{display:none;}
+
+.tippie-component{
+  background: $navbar-link-color;
+  border-bottom-left-radius: $medium-radius;
+  border-bottom-right-radius: $medium-radius;
+}
+
+.tippie-header{
+  background: #7ba3c1;
+  border-top-left-radius: $medium-radius;
+  border-top-right-radius: $medium-radius;
+}
+
+
+.tippie-header p
+{
+  font-size: 16px;
+  color: $navbar-link-color;
+}
+
+.ui-text-centered
+{
+  text-align: center;
+}

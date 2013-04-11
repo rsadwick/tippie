@@ -27,15 +27,7 @@
 		background: #fefefe;
 	}
      /* TODO: convert to SASS */
-	.column, .columns, .tiles > li {
-		background: #ddd;
-        border: 1px solid #d0d0d0;
-		-webkit-transition-duration: .3s;
-		-moz-transition-duration: .3s;
-		-o-transition-duration: .3s;
-		-ms-transition-duration: .3s;
-		transition-duration: .3s;
-	}
+
 
 	/*.column:hover, .columns:hover {
 		background: #efefef;
@@ -70,10 +62,11 @@
 	}
 
 	p {
-		font-size: 16px;
-		line-height: 60px;
+		font-size: 53px;
+		line-height: 45px;
 		margin-bottom: 0;
 		color: #555;
+        text-align: center;
 
 		-webkit-transition-duration: .2s;
 		-moz-transition-duration: .2s;
@@ -117,95 +110,29 @@
 	}
 
 
-    .rating li.active
-    {
-        background: #ff9900;
-    }
 
-	@media only screen and (max-width: 767px) {
-
-		h1 {
-			font: bold italic 100px georgia, times new roman, serif;
-			-webkit-transition-duration: .5s;
-		}
-
-	}
-
-    .ui-slider-track, .ui-slider-switch {
-        margin: 0;
-    }
-
-    .timer {
-        position:relative;
-        font-size: 200px;
-        width:1em;
-        height:1em;
-        padding: 4px 4px;
-    }
-    .timer > .percent {
-        position: absolute;
-        top: 16px;
-        width: 3.33em;
-        font-size: 13px;
-        text-align:center;
-    }
-    .timer > #slice {
-        position:absolute;
-        width:1em;
-        height:1em;
-        clip:rect(0px,1em,1em,0.4em);
-    }
-    .timer > #slice.gt50 {
-        clip:rect(auto, auto, auto, auto);
-    }
-    .timer > #slice > .pie {
-        border: 0.1em solid #77ccaa;
-        position:absolute;
-        width:0.8em; /* 1 - (2 * border width) */
-        height:0.8em; /* 1 - (2 * border width) */
-        clip:rect(0em,0.4em,1em,0em);
-        -moz-border-radius:0.5em;
-        -webkit-border-radius:0.5em;
-        border-radius:0.5em;
-    }
-    .timer > #slice > .pie.fill {
-        -moz-transform:rotate(180deg) !important;
-        -webkit-transform:rotate(180deg) !important;
-        -o-transform:rotate(180deg) !important;
-        transform:rotate(180deg) !important;
-    }
-    .timer.fill > .percent {
-        display: none;
-    }
-    .timer.fill > #slice > .pie {
-        border: transparent;
-        background-color: #c0c0c0;
-        width:1em;
-        height:1em;
-    }
-
-    #slider-val input{display:none;}
 
 </style>
 
 <body>
 <div data-role="page" id="tipster">
-
     <div data-role="header" data-position="fixed" style="overflow:hidden;">
         <h1>Tippie</h1>
-        <a href="#tipMenu" data-icon="gear" class="ui-btn-left">Load Tip</a>
-        <a href="#settings" data-icon="gear" class="ui-btn-right">Options</a>
     </div>
     <div data-role="content">
         <div class="container">
             <div class="row">
+
                 <div class="twelve columns">
-                    <div class="row">
+                    <div class="tippie-header twelve columns">
+                        <p>Enter total</p>
+                    </div>
+                    <div class="row tippie-component">
                         <div class="centered ten columns">
                             <input id="meal-total" type="number" step="0.01" min="0" >
                             <ul class="two_up tiles">
-                                <li id="tip-amount">Two Up</li>
-                                <li id="tip-split">Two Up</li>
+                                <li id="tip-amount" class="ui-text-centered">Two Up</li>
+                                <li id="tip-split" class="ui-text-centered">Two Up</li>
                             </ul>
                             <p id="bill-total">$0.00</p>
                         </div>
@@ -213,7 +140,10 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row tippie-component">
+                <div class="tippie-header twelve columns">
+                    <p>rate service</p>
+                </div>
                 <div class="twelve columns">
                     <ul class="five_up tiles rating">
                         <li data-percent="10">Four Up</li>
@@ -225,7 +155,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row tippie-component">
                 <div class="twelve columns">
                     <div class="three columns">
                         <div class="timer"></div>
@@ -239,7 +169,10 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row tippie-component">
+                <div class="tippie-header twelve columns">
+                    <p>How many peeps</p>
+                </div>
                 <div class="twelve columns">
                     <div class="two columns">
                         icon
@@ -274,7 +207,7 @@
     </div>
 
     <div data-role="footer">
-        <div data-role="navbar" data-iconpos="left" data-id="foo1" data-position="fixed">
+        <div data-role="navbar" data-iconpos="left" data-position="fixed">
             <ul>
                 <li><a href="#tipMenu" data-icon="grid">Load Tips</a></li>
                 <li><a href="#tipster" data-icon="star" class="ui-btn-active ui-state-persist">Tip</a></li>
@@ -370,12 +303,10 @@
 
     <div data-role="content">
         <!-- max tippie -->
-        <div class="row">
-            <div class="twelve columns">
-                <label for="settings-max-tip">Max you'll ever tip:</label>
+        <div class="row tippie-component">
+            <div class="tippie-header twelve columns">
+                <p>max you'll ever tip</p>
             </div>
-        </div>
-        <div class="row">
             <div class="twelve columns">
                 <div class="six columns">
                     <input id="settings-max-tip" data-setting="max" type="number" step="1" min="1" value="0" >
@@ -390,13 +321,10 @@
         </div>
 
         <!-- Label 3: Great -->
-        <div class="row">
-            <div class="twelve columns">
-                <label for="settings-great-tip">Great service:</label>
+        <div class="row tippie-component">
+            <div class="tippie-header twelve columns">
+                <p>Great Tip</p>
             </div>
-        </div>
-
-        <div class="row">
             <div class="twelve columns">
                 <div class="six columns">
                     <input id="settings-great-tip" type="number" step="1" min="1" value="1" >
@@ -410,13 +338,10 @@
         </div>
 
         <!-- Label 3: Minimal -->
-        <div class="row">
-            <div class="twelve columns">
-                <label for="settings-minimal-tip">minimal service:</label>
+        <div class="row tippie-component">
+            <div class="tippie-header twelve columns">
+                <p>minimal tip</p>
             </div>
-        </div>
-
-        <div class="row">
             <div class="twelve columns">
                 <div class="six columns">
                     <input id="settings-minimal-tip" type="number" step="1" min="1" value="1" >
@@ -430,13 +355,10 @@
         </div>
 
         <!-- Label 2: Okay Service -->
-        <div class="row">
-            <div class="twelve columns">
-                <label for="settings-max-tip">Okay service:</label>
+        <div class="row tippie-component">
+            <div class="tippie-header twelve columns">
+                <p>okay service</p>
             </div>
-        </div>
-
-        <div class="row">
             <div class="twelve columns">
                 <div class="six columns">
                     <input id="settings-okay-tip" type="number" step="1" min="1" value="1" >
@@ -450,13 +372,10 @@
         </div>
 
         <!-- Label 1: Poor Service -->
-        <div class="row">
-            <div class="twelve columns">
-                <label for="settings-max-tip">Poor service:</label>
+        <div class="row tippie-component">
+            <div class="tippie-header twelve columns">
+                <p>Poor service</p>
             </div>
-        </div>
-
-        <div class="row">
             <div class="twelve columns">
                 <div class="six columns">
                     <input id="settings-poor-tip" type="number" step="1" min="1" value="0" >
