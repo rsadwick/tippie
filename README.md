@@ -1,8 +1,7 @@
 Tippie
 =====================
 
-Currently porting over my old [Android Tippie app](https://play.google.com/store/apps/details?id=com.rsadwick.tips) to html5/js.  My goal is to create an iOS webview and serve up the
-app that way instead of getting heavy into obj-c.
+Currently porting over my old [Android Tippie app](https://play.google.com/store/apps/details?id=com.rsadwick.tips) to html5/js.
 
 **Dependencies**
 

@@ -30,14 +30,8 @@
                 this.TippieUserObj.id = this.Key + new Date().getTime();
                 this.TippieUserObj.tips = [];
                 this.TippieUserObj.settings = [];
-                //set default settings:
-                this.TippieUserObj.settings.push([
-                    "settings-max-tip", 20,
-                    "settings-great-tip", 15,
-                    "settings-minimal-tip", 10,
-                    "settings-okay-tip", 5,
-                    "settings-poor-tip", 0])
                 localStorage.setObject(this.Key, this.TippieUserObj);
+
             }
             else
             {
@@ -45,7 +39,6 @@
             }
 
             this.Events.On(Tippie.Application.EVENT.SETTING_CHANGED, function (settings) {
-
                 this.TippieUserObj.settings = settings;
                 localStorage.setObject(this.Key, this.TippieUserObj)
                 this.LoadSettings();
@@ -67,6 +60,7 @@
 
         LoadSettings: function()
         {
+
             this.Events.Trigger(Tippie.Application.EVENT.SETTING_LOADED, this.TippieUserObj.settings);
         }
     };

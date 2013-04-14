@@ -6,10 +6,6 @@
             element: $(canvas).find('.timer'),
             max: 100
         });
-        this.settings = new Tippie.UserStorage({
-            key : 'tippie',
-            events: this.Events
-        });
     };
 
     Tippie.Application.EVENT =
@@ -92,8 +88,17 @@
 
             Tippie.Instance().Events.On(Tippie.Application.EVENT.TIP_LOADED, function(savedTips){
                 //Load previously saved tips into the dom:
-                var canvas = this.Canvas.find('#tipListing');
-                canvas.children().remove();
+                var canvas = _scope.Canvas.find('#tipListing');
+                //check for saved tips: if not, message something.
+                if(canvas.children().length > 0)
+                {
+                    canvas.children().remove();
+                }
+
+                else{
+                    canvas.append($('<p/>').text("You haven't saved any tips yet."));
+                }
+
                 for(var currentTipObj = 0; currentTipObj < savedTips.length; currentTipObj++)
                 {
                     var tipBtn = $('<a/>').attr({
@@ -166,6 +171,16 @@
                 step: 1
             });
 
+
+            //create/load saved tips & settings:
+            this.settings = new Tippie.UserStorage({
+                key : 'tippie',
+                events: this.Events
+            });
+            this.settings.CreateStorage();
+            this.settings.LoadTipView();
+            this.settings.LoadSettings();
+
             this.settingsMax = new Tippie.NumberStep({
                 field : '#settings-max-tip',
                 up: '#settings-max-up',
@@ -221,10 +236,7 @@
                 step: 1
             });
 
-            //create/load saved tips & settings:
-            this.settings.CreateStorage();
-            this.settings.LoadTipView();
-            this.settings.LoadSettings();
+
         },
 
         UpdateTip: function(value){
