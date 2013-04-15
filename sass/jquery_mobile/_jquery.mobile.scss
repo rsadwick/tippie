@@ -703,19 +703,19 @@ a.ui-link-inherit {
 /* Active class used as the "on" state across all themes
 -----------------------------------------------------------------------------------------------------------*/
 .ui-btn-active {
-  border: 1px solid 		#2373a5 /*{global-active-border}*/;
-  background: 			#5393c5 /*{global-active-background-color}*/;
+  border: 1px solid 		$primary-color /*{global-active-border}*/;
+  background: 			$primary-color /*{global-active-background-color}*/;
   font-weight: bold;
   color: 					#fff /*{global-active-color}*/;
   cursor: pointer;
   text-shadow: 0 /*{global-active-shadow-x}*/ 1px /*{global-active-shadow-y}*/ 0 /*{global-active-shadow-radius}*/ #3373a5 /*{global-active-shadow-color}*/;
   text-decoration: none;
-  background-image: -webkit-gradient(linear, left top, left bottom, from( #5393c5 /*{global-active-background-start}*/), to( #6facd5 /*{global-active-background-end}*/)); /* Saf4+, Chrome */
-  background-image: -webkit-linear-gradient( #5393c5 /*{global-active-background-start}*/, #6facd5 /*{global-active-background-end}*/); /* Chrome 10+, Saf5.1+ */
-  background-image:    -moz-linear-gradient( #5393c5 /*{global-active-background-start}*/, #6facd5 /*{global-active-background-end}*/); /* FF3.6 */
-  background-image:     -ms-linear-gradient( #5393c5 /*{global-active-background-start}*/, #6facd5 /*{global-active-background-end}*/); /* IE10 */
-  background-image:      -o-linear-gradient( #5393c5 /*{global-active-background-start}*/, #6facd5 /*{global-active-background-end}*/); /* Opera 11.10+ */
-  background-image:         linear-gradient( #5393c5 /*{global-active-background-start}*/, #6facd5 /*{global-active-background-end}*/);
+  background-image: -webkit-gradient(linear, left top, left bottom, from( $primary-color /*{global-active-background-start}*/), to( $primary-color-gradient /*{global-active-background-end}*/)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient( $primary-color, $primary-color-gradient); /* Chrome 10+, Saf5.1+ */
+  background-image:    -moz-linear-gradient( $primary-color /*{global-active-background-start}*/, $primary-color-gradient  /*{global-active-background-end}*/); /* FF3.6 */
+  background-image:     -ms-linear-gradient( $primary-color /*{global-active-background-start}*/, $primary-color-gradient  /*{global-active-background-end}*/); /* IE10 */
+  background-image:      -o-linear-gradient( $primary-color /*{global-active-background-start}*/, $primary-color-gradient  /*{global-active-background-end}*/); /* Opera 11.10+ */
+  background-image:         linear-gradient( $primary-color /*{global-active-background-start}*/, $primary-color-gradient  /*{global-active-background-end}*/);
   font-family: Helvetica, Arial, sans-serif /*{global-font-family}*/;
 }
 .ui-btn-active:visited,
@@ -1071,7 +1071,7 @@ only screen and (min-resolution: 200dpi) {
 body.ui-mobile-viewport,
 div.ui-mobile-viewport { overflow-x: hidden; }
 /* "page" containers - full-screen views, one should always be in view post-pageload */
-.ui-mobile [data-role=page], .ui-mobile [data-role=dialog], .ui-page { top: 0; left: 0; width: 100%; min-height: 100%; position: absolute; display: none; border: 0; }
+.ui-mobile [data-role=page], .ui-mobile [data-role=dialog], .ui-page { top: 0; left: 0; width: 100%; min-height: 100%; position: absolute; display: none; border: 0; background: $global-bg-color; }
 .ui-mobile .ui-page-active { display: block; overflow: visible; }
 /* on ios4, setting focus on the page element causes flashing during transitions when there is an outline, so we turn off outlines */
 .ui-page { outline: none; }

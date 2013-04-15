@@ -149,6 +149,14 @@
                 });
             });
 
+            //Rating buttons:
+            this.Canvas.find('.rating li').each(function( index ) {
+                $(this).on('click', function(e){
+                    _scope.UpdateRating($(this).data('percent'));
+                    _scope.UpdateTip($(this).data('percent'));
+                })
+            });
+
             Tippie.Instance().Events.On(Tippie.Application.EVENT.SLIDER_CHANGED, function () {
                 Tippie.Instance().UpdateTip(_scope.Canvas.find('#slider-1').slider().val());
                 Tippie.Instance().CalculateTip();
