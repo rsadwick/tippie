@@ -1,7 +1,10 @@
 ;(function ($) {
     /**
-     * class Tippie.ProgressCircle
-     **/
+     * Tippie.ProgressCircle
+     * @classDescription: creates a circular ui element
+     * @param {htmlElement} element    The htmlElement that will build the circle
+     * @param {number} max    The maximum value that is displayed.
+     */
     Tippie.ProgressCircle = function (config) {
         config = (config = config || {});
         this.Element = $(config.element);
@@ -12,6 +15,11 @@
 
     Tippie.ProgressCircle.prototype = {
 
+        /**
+         * Render
+         * @classDescription: Renders the element
+         * @param {number} percent    the percentage to draw
+         */
         Render: function (percent) {
             if(percent >= this.Max / 2)
             {
@@ -33,6 +41,11 @@
             this.Element.find('.percent').html(Math.round(percent) + '%' );
         },
 
+         /**
+         * SetMax
+         * @classDescription: Sets the maximum value dynamically
+         * @param {number} value    the value of the max limit
+         */
         SetMax: function(value){
             this.Max = value;
         }

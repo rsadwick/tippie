@@ -1,4 +1,10 @@
 ; (function ($) {
+    /**
+     * Tippie.Application
+     * @classDescription: Handles application level
+     * @param {Event} Events    event obj that will coordinate all events
+     * @param {htmlElement} Canvas    The container of the application
+     */
     Tippie.Application = function (canvas) {
         this.Events = new Tippie.EventCoordinator();
         this.Canvas = $(canvas);
@@ -28,6 +34,10 @@
         settingsOkay: null,
         settingsPoor: null,
 
+        /**
+         * InitControls
+         * @classDescription: Initialized UI, settings, and events.
+         */
         InitControls: function () {
 
             var _scope = this;
@@ -92,8 +102,7 @@
                 //Load previously saved tips into the dom:
                 var canvas = _scope.Canvas.find('#tipListing');
                 //check for saved tips: if not, message something.
-                (canvas.children().length > 0) ? canvas.children().remove() : canvas.append($('<p/>').text("You haven't saved any tips yet."));
-
+                (savedTips.length > 0) ? canvas.children().remove() : canvas.append($('<p/>').text("You haven't saved any tips yet."));
                 //load tips:
                 for(var currentTipObj = 0; currentTipObj < savedTips.length; currentTipObj++)
                 {
@@ -239,6 +248,10 @@
             });
         },
 
+        /**
+         * UpdateTip
+         * @classDescription: Updates the rating UI.
+         */
         UpdateTip: function(value){
             this.Canvas.find('.rating li').each(function() {
                 if(value > $(this).prev().data('percent') && value <= $(this).data('percent') || !$(this).prev().data('percent') && value <= $(this).data('percent'))
@@ -252,14 +265,28 @@
             });
         },
 
+        /**
+         * UpdateRatingValue
+         * @classDescription: Updates the rating value in the DOM
+         * @param {number} rating    needle for finding each rating to adjust
+         * @param {number} value    the new value of the rating
+         */
         UpdateRatingValue: function(rating, value){
             this.Canvas.find('.rating li').eq(rating).data('percent', Number(value));
         },
 
+        /**
+         * UpdateRating
+         * @classDescription: Updates the rating value in the DOM
+         */
         UpdateRating: function(value){
             this.Canvas.find('#slider-1').slider().val(value).slider("refresh");
         },
 
+        /**
+         * CalculateTip
+         * @classDescription: Does all the math required and updates UI
+         */
         CalculateTip: function(){
             var bill = this.Canvas.find('#meal-total').val() - 0;
             var tippie = this.Canvas.find('#slider-1').slider().val() - 0;

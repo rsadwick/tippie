@@ -1,5 +1,5 @@
 ; (function ($) {
-    jQuery(document).ready(function () {
+    $(document).ready(function () {
         window.Tippie.Instance(new Tippie.Application
         (
             'body'

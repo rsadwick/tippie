@@ -1,7 +1,17 @@
 Tippie
 =====================
 
-Currently porting over my old [Android Tippie app](https://play.google.com/store/apps/details?id=com.rsadwick.tips) to html5/js.
+Porting over my old [Android Tippie app](https://play.google.com/store/apps/details?id=com.rsadwick.tips) to html5/js.
+I'm doing more than just porting, Tippie is getting a total revamp and a better UI.
+
+**Features**
+
+- Calculate tips on the fly.
+- Split the bill.
+- Email breakdown of meal to others.
+- Save and load tips for later (reference to receipt = no more paper!).
+- Rating system: use a rating system to easily come up with a tip.
+- Easily customize rating to tip ratio.
 
 **Dependencies**
 
@@ -9,6 +19,7 @@ Currently porting over my old [Android Tippie app](https://play.google.com/store
 - [Compass](https://github.com/chriseppstein/compass)
 - [Gumby](https://github.com/GumbyFramework/gumby)
 - [jQuery Mobile](http://jquery.com/)
+- [PhoneGap](https://github.com/phonegap/phonegap)
 
 License
 ====================
