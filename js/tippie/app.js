@@ -2,10 +2,6 @@
     Tippie.Application = function (canvas) {
         this.Events = new Tippie.EventCoordinator();
         this.Canvas = $(canvas);
-        this.progressBar = new Tippie.ProgressCircle({
-            element: $(canvas).find('.timer'),
-            max: 100
-        });
     };
 
     Tippie.Application.EVENT =
@@ -50,6 +46,12 @@
                 _scope.Events.Trigger(Tippie.Application.EVENT.TIP_SAVED, e);
             });
 
+            //progress circle:
+            this.progressBar = new Tippie.ProgressCircle({
+                element: this.Canvas.find('.timer'),
+                max: 100
+            });
+
             //email modal:
             this.Canvas.find('#emailBtn').on('click', function(){
                 //prepare date for msg body:
@@ -64,7 +66,7 @@
 
             //email form
             this.Canvas.find('#email-to').change(function() {
-                _scope.Canvas.find('#sendEmailBtn').attr('href','mailto:' + _scope.Canvas.find('#email-to').val() + '?subject=Tippie Info&body=' +  _scope.Canvas.find('#emailDialog textarea').val() )
+                _scope.Canvas.find('#sendEmailBtn').attr('href','mailto:' + _scope.Canvas.find('#email-to').val() + '?subject=Tippie Info&body=' + _scope.Canvas.find('#emailDialog textarea').val() )
             });
 
             //clear tippie:
@@ -75,7 +77,7 @@
                 _scope.Events.Trigger(Tippie.Application.EVENT.SLIDER_CHANGED);
             });
 
-            Tippie.Instance().Events.On(Tippie.Application.EVENT.TIP_SAVED, function(e){
+            Tippie.Instance().Events.On(Tippie.Application.EVENT.TIP_SAVED, function(){
                 var currentTip = {};
                 currentTip.name = this.Canvas.find('#tip-name').val();
                 currentTip.total = this.Canvas.find('#meal-total').val();
@@ -90,15 +92,9 @@
                 //Load previously saved tips into the dom:
                 var canvas = _scope.Canvas.find('#tipListing');
                 //check for saved tips: if not, message something.
-                if(canvas.children().length > 0)
-                {
-                    canvas.children().remove();
-                }
+                (canvas.children().length > 0) ? canvas.children().remove() : canvas.append($('<p/>').text("You haven't saved any tips yet."));
 
-                else{
-                    canvas.append($('<p/>').text("You haven't saved any tips yet."));
-                }
-
+                //load tips:
                 for(var currentTipObj = 0; currentTipObj < savedTips.length; currentTipObj++)
                 {
                     var tipBtn = $('<a/>').attr({
@@ -133,7 +129,6 @@
                         this.Canvas.find('#slider-1').attr('max', savedSettings[currentSetting][1])
                     }
                 }
-
             }, this);
 
             Tippie.Instance().Events.On(Tippie.Application.EVENT.REQUEST_TIP, function(data){
@@ -150,8 +145,8 @@
             });
 
             //Rating buttons:
-            this.Canvas.find('.rating li').each(function( index ) {
-                $(this).on('click', function(e){
+            this.Canvas.find('.rating li').each(function() {
+                $(this).on('click', function(){
                     _scope.UpdateRating($(this).data('percent'));
                     _scope.UpdateTip($(this).data('percent'));
                 })
@@ -163,11 +158,11 @@
             }, this);
 
             //divisions:
-            Tippie.Instance().Events.On(Tippie.Application.EVENT.DIVISION_CHANGED, function (e) {
+            Tippie.Instance().Events.On(Tippie.Application.EVENT.DIVISION_CHANGED, function () {
                 _scope.Events.Trigger(Tippie.Application.EVENT.SLIDER_CHANGED, _scope.Canvas.find('#slider-1').slider().val());
             }, this);
 
-            //Number Steppers:
+            //Division Stepper:
             this.divisionStepper = new Tippie.NumberStep({
                 field : '#divide-meal',
                 up: '#up',
@@ -178,7 +173,6 @@
                 max: 99999,
                 step: 1
             });
-
 
             //create/load saved tips & settings:
             this.settings = new Tippie.UserStorage({
@@ -243,12 +237,10 @@
                 max: 100,
                 step: 1
             });
-
-
         },
 
         UpdateTip: function(value){
-            this.Canvas.find('.rating li').each(function( index ) {
+            this.Canvas.find('.rating li').each(function() {
                 if(value > $(this).prev().data('percent') && value <= $(this).data('percent') || !$(this).prev().data('percent') && value <= $(this).data('percent'))
                 {
                     $(this).addClass('active');

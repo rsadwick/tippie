@@ -70,7 +70,7 @@
                     case Tippie.Application.EVENT.SETTING_CHANGED:
 
                         var settings = [];
-                        scope.Field.parents().find('#settings input').each(function(index){
+                        scope.Field.parents().find('#settings input').each(function(){
                             settings.push([$(this).attr('id'), $(this).val()]);
                         });
 
